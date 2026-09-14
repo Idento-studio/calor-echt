@@ -41,6 +41,8 @@
   width: 44px;
   height: 1px;
   background: currentColor;
+  align-self: flex-end;
+  margin-bottom: 0.45em;
   transition: width 0.35s var(--ease);
 }
 .btn:hover { color: var(--cream-050); }
@@ -51,6 +53,12 @@
 .btn--muted { color: var(--muted-400); }
 .btn--sand { color: var(--sand-500); }
 .btn[aria-busy="true"] { opacity: 0.65; pointer-events: none; }
+@media (max-width: 480px) {
+  /* Lange knoplabels ("Cookie-instellingen wijzigen") anders krap
+     genoeg om op twee regels te breken, waarbij het lijntje er dan
+     verkeerd — halverwege — tussen komt te staan. */
+  .btn { letter-spacing: 0.26em; gap: 12px; }
+}
 
 
 /* — Sectiekop (grote serif-titel + intro) — gebruikt op home én menupagina's — */

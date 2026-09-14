@@ -105,7 +105,10 @@
 
 
 /* — Merkfooter (.ftr) — gebruikt op home, La Carta, La Barra. — */
-.ftr { background: var(--wine-900); padding-block: clamp(56px, 8vw, 96px) 32px; border-top: 1px solid var(--sand-dim); }
+/* Ruime onderkant: de RestoManager-widget hangt vast onderaan rechts in
+   de viewport en zou anders over de juridische links in .ftr__bottom
+   kunnen vallen wanneer de footer in beeld scrolt. */
+.ftr { background: var(--wine-900); padding-block: clamp(56px, 8vw, 96px) 140px; border-top: 1px solid var(--sand-dim); }
 .ftr__grid { display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: clamp(32px, 5vw, 64px); }
 .ftr__brand img { width: 130px; }
 .ftr__tagline { margin-top: 16px; max-width: 32ch; color: var(--sand-500); font-size: 13.5px; line-height: 1.7; }

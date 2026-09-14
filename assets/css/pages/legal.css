@@ -24,8 +24,10 @@
 }
 .prose ol { list-style: decimal; }
 
+.cookie-table-wrap { overflow-x: auto; }
 .cookie-table {
   width: 100%;
+  min-width: 480px;
   border-collapse: collapse;
   font-size: var(--fs-small);
 }

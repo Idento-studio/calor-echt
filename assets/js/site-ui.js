@@ -1,8 +1,9 @@
 /* ==========================================================================
-   home.js — interactie die alleen op de homepage voorkomt: sticky header,
-   mobiel uitklapmenu, de tabs van de menukaart en de botanische lijnprint
-   achter "La Carta". Scroll-reveal (.reveal) en de cookiebanner lopen via
-   site.js / cookie-consent.js, die op elke pagina staan.
+   site-ui.js — interactie voor de merkpagina's (home, La Carta, La Barra):
+   sticky header, mobiel uitklapmenu, de tabs van een menukaart en de
+   botanische lijnprint achter kaart-secties. Scroll-reveal (.reveal) en de
+   cookiebanner lopen via site.js / cookie-consent.js, die op elke pagina
+   staan.
    ========================================================================== */
 (function () {
   'use strict';

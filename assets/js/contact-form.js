@@ -24,7 +24,7 @@
   'use strict';
 
   var ENDPOINT = '';
-  var MAIL_TO = '[EMAIL]';
+  var MAIL_TO = 'info@calor-echt.nl';
 
   var forms = document.querySelectorAll('[data-ajax-form]');
   if (!forms.length) return;
@@ -181,9 +181,8 @@
           'Je bericht is verstuurd — we antwoorden zo snel mogelijk, meestal binnen de dag.');
       }).catch(function () {
         setStatus('error',
-          '<strong>Het versturen lukte niet.</strong> Probeer het straks opnieuw, of bereik ons ' +
-          'rechtstreeks op <a href="tel:[TELEFOON-E164]">[TELEFOON]</a> of ' +
-          '<a href="mailto:' + MAIL_TO + '">' + MAIL_TO + '</a>.');
+          '<strong>Het versturen lukte niet.</strong> Probeer het straks opnieuw, of mail ons ' +
+          'rechtstreeks op <a href="mailto:' + MAIL_TO + '">' + MAIL_TO + '</a>.');
       }).then(function () {
         busy(false);
       });

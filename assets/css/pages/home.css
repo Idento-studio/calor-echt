@@ -1,9 +1,11 @@
 /* ==========================================================================
    pages/home.css — uitsluitend voor index.html.
-   Eigen header (.hdr) en footer (.ftr), hero, La Experiencia, La Carta
-   (tabs + menukaart), Tabla de Bebidas, neon quote, La Barra, galerij,
-   Bezoek. Deze onderdelen bestaan alleen op de homepage — vandaar hier en
-   niet in layout.css/components.css.
+   Hero, La Experiencia, La Carta-teaser, Tabla de Bebidas, neon quote,
+   La Barra-teaser. De merkheader/-footer (.hdr/.ftr), het sectieritme
+   (.sec/.botanic), de menukaart (.menu/.item, .feature), de fotogalerij
+   (.gallery) en het bezoek-/contactblok (.visit) zitten in
+   layout.css/components.css — die zijn ook nodig op de losse
+   La Carta-, La Barra-, Sfeer- en Contact-pagina's.
    ========================================================================== */
 
 :root {
@@ -12,8 +14,6 @@
   --wine-deep: var(--wine-900);
   --wine-soft: var(--wine-700);
   --sand: var(--sand-500);
-  --sand-light: var(--sand-400);
-  --sand-dim: rgba(235, 207, 160, 0.18);
   --gold: var(--gold-500);
   --cream: var(--cream-050);
   --muted: var(--muted-400);
@@ -22,57 +22,6 @@
   --sans: var(--font-body);
   --neon: var(--font-neon);
 }
-
-/* ---------- Sectietitel ---------- */
-.stitle {
-  font-size: clamp(2rem, 4.6vw, 3.4rem);
-  color: var(--gold);
-  letter-spacing: -0.01em;
-}
-.stitle em { font-style: italic; color: var(--cream); }
-.stitle .amp { color: var(--cream); font-style: italic; }
-
-
-/* ---------- Header ---------- */
-.hdr {
-  position: fixed;
-  inset: 0 0 auto 0;
-  z-index: 60;
-  padding: 22px 0;
-  transition: background 0.4s var(--ease), padding 0.4s var(--ease), box-shadow 0.4s var(--ease);
-}
-.hdr.is-stuck {
-  background: rgba(42, 14, 14, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 12px 0;
-  box-shadow: 0 1px 0 var(--sand-dim);
-}
-.hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.hdr__logo img { width: 132px; height: auto; }
-.hdr-nav { display: flex; align-items: center; gap: 38px; }
-.hdr-nav a {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.34em;
-  text-transform: uppercase;
-  color: var(--cream);
-  opacity: 0.85;
-  transition: color 0.25s, opacity 0.25s;
-}
-.hdr-nav a:hover { color: var(--gold); opacity: 1; }
-.hdr-nav .btn { margin-left: 6px; }
-
-.burger {
-  display: none;
-  width: 44px; height: 44px;
-  border: 0; background: none; cursor: pointer;
-  padding: 10px; margin-right: -10px;
-}
-.burger span { display: block; height: 1.5px; background: var(--gold); margin: 5px 0; transition: transform 0.35s var(--ease), opacity 0.25s; }
-.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 
 /* ---------- Hero ---------- */
@@ -141,18 +90,6 @@
 }
 
 
-/* ---------- Secties ---------- */
-.sec { padding-block: var(--sec); position: relative; }
-.sec--card { background: var(--wine-card); position: relative; overflow: hidden; }
-.sec--deep { background: var(--wine-deep); }
-
-/* Botanische lijnprint van de menukaart, subtiel (achtergrond via JS ingevuld) */
-.botanic {
-  position: absolute; inset: 0; opacity: 0.055; pointer-events: none;
-  background-repeat: repeat; background-size: 520px auto;
-}
-
-
 /* ---------- La Experiencia ---------- */
 .split { display: grid; grid-template-columns: 1fr 1.08fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
 .split__txt p { max-width: 46ch; }
@@ -171,71 +108,9 @@
 .framed::after { border: 1px solid var(--gold); bottom: clamp(-18px, -2vw, -28px); right: clamp(-18px, -2vw, -28px); }
 
 
-/* ---------- La Carta ---------- */
-.carta__head { text-align: center; max-width: 66ch; margin: 0 auto clamp(34px, 5vw, 54px); }
-.carta__head p { color: var(--sand); opacity: 0.85; }
-
-/* Tabs */
-.tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: clamp(34px, 5vw, 52px); }
-.tab {
-  font-family: var(--sans);
-  font-size: 10.5px; font-weight: 600;
-  letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--sand); background: transparent;
-  border: 1px solid var(--sand-dim); border-radius: 999px;
-  padding: 11px 22px; cursor: pointer;
-  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
-}
-.tab:hover { border-color: var(--sand); color: var(--cream); }
-.tab[aria-selected="true"] { background: var(--sand); color: var(--wine-card-d); border-color: var(--sand); }
-
-.panel[hidden] { display: none; }
-.panel { animation: fade 0.45s var(--ease); }
-@keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: none; }
-}
-
-/* Groep-label — de balkjes van de gedrukte kaart */
-.grouplabel {
-  display: inline-block;
-  font-size: 10.5px; font-weight: 700; letter-spacing: 0.34em; text-transform: uppercase;
-  color: var(--sand-light);
-  background: var(--wine-card-d);
-  padding: 9px 20px; margin: 0 0 26px;
-  border: 1px solid var(--sand-dim);
-}
-.group + .group { margin-top: clamp(46px, 6vw, 72px); }
-
-/* Menulijst */
-.menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(40px, 6vw, 80px); }
-.item {
-  display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: baseline;
-  padding: 18px 0; border-bottom: 1px solid rgba(235, 207, 160, 0.13);
-}
-.item__name {
-  font-family: var(--serif); font-size: clamp(1.05rem, 1.5vw, 1.28rem); font-weight: 500;
-  color: var(--cream); line-height: 1.3; margin: 0;
-}
-.item__price {
-  font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
-  color: var(--wine-card-d); background: var(--sand);
-  border-radius: 999px; padding: 5px 13px; white-space: nowrap;
-  align-self: center;
-}
-.item__desc { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.7; color: var(--muted); margin: 0; max-width: 52ch; }
-.veg { display: inline-block; margin-left: 8px; vertical-align: middle; width: 15px; height: 15px; color: var(--sand); opacity: 0.9; }
-
-
-/* ---------- Aanbevolen / borrelplank ---------- */
-.feature { display: grid; grid-template-columns: 1.05fr 1fr; align-items: stretch; gap: 0; }
-.feature__img { min-height: clamp(300px, 42vw, 560px); background: url("../../img/tapas-spread.jpg") center/cover no-repeat; }
-.feature__box { background: var(--wine-soft); padding: clamp(34px, 5vw, 72px); display: flex; flex-direction: column; justify-content: center; }
-.feature__price { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.8rem); color: var(--gold); margin: 10px 0 22px; }
-.plank { border-top: 1px solid rgba(235, 207, 160, 0.16); padding: 16px 0; display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; align-items: center; }
-.plank h4 { font-size: 1.05rem; font-weight: 500; color: var(--cream); margin: 0; }
-.plank p { grid-column: 1/-1; font-size: 13px; margin: 0; color: var(--muted); }
-.plank .item__price { align-self: center; }
+/* ---------- La Carta-teaser ---------- */
+.carta-categories { text-align: center; color: var(--sand); opacity: 0.7; font-size: 13px; letter-spacing: 0.04em; margin-top: 10px; }
+.carta-highlights { max-width: 900px; margin: 0 auto; }
 
 
 /* ---------- Neon quote ---------- */
@@ -262,77 +137,24 @@
 .neon p { font-family: var(--serif); font-style: italic; font-size: clamp(1rem, 2.1vw, 1.45rem); color: var(--sand); max-width: 30ch; margin-inline: auto; }
 
 
-/* ---------- La Barra ---------- */
+/* ---------- La Barra-teaser ---------- */
 .barra { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(40px, 7vw, 90px); align-items: center; }
 .barra .framed img { height: clamp(340px, 48vw, 600px); }
 .barra__list { margin-top: 34px; }
 
 
-/* ---------- Galerij ---------- */
-.gallery {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 12px; gap: 14px; margin-top: clamp(34px, 5vw, 54px);
-}
-.gallery figure { margin: 0; overflow: hidden; background: var(--wine-deep); }
-.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease), filter 0.6s var(--ease); filter: saturate(0.95); }
-.gallery figure:hover img { transform: scale(1.06); filter: saturate(1.15); }
-.g1 { grid-row: span 40; }
-.g2 { grid-row: span 32; }
-.g3 { grid-row: span 18; }
-.g4 { grid-row: span 40; }
-.g5 { grid-row: span 32; }
-.g6 { grid-row: span 22; }
-
-
-/* ---------- Bezoek ---------- */
-.visit { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
-.info { margin-top: 34px; display: grid; gap: 30px; }
-.info h3 {
-  font-family: var(--sans); font-size: 10.5px; font-weight: 700;
-  letter-spacing: 0.34em; text-transform: uppercase; color: var(--rose); margin: 0 0 12px;
-}
-.info p, .info a { color: var(--sand); font-size: 14.5px; line-height: 1.9; }
-.info a:hover { color: var(--gold); }
-.hours { display: grid; gap: 2px; }
-.hours div { display: flex; justify-content: space-between; max-width: 290px; gap: 20px; color: var(--sand); font-size: 14.5px; }
-.hours span:first-child { color: var(--muted); }
-.map { border: 1px solid rgba(235, 207, 160, 0.18); overflow: hidden; min-height: 360px; }
-.map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; filter: grayscale(0.35) contrast(1.05); }
-
-
-/* ---------- Homepage-footer ---------- */
-.ftr { background: var(--wine-deep); padding-block: 56px; border-top: 1px solid rgba(235, 207, 160, 0.12); }
-.ftr__in { display: flex; flex-wrap: wrap; gap: 26px 40px; align-items: center; justify-content: space-between; }
-.ftr img { width: 118px; }
-.ftr__links { display: flex; flex-wrap: wrap; gap: 22px; }
-.ftr__links a { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sand); opacity: 0.8; }
-.ftr__links a:hover { color: var(--gold); opacity: 1; }
-.ftr__copy { font-size: 12px; color: var(--muted); opacity: 0.7; width: 100%; padding-top: 24px; border-top: 1px solid rgba(235, 207, 160, 0.1); margin-top: 8px; }
+/* ---------- Sfeer-teaser ---------- */
+.gallery-teaser-cta { text-align: center; margin-top: clamp(34px, 5vw, 52px); }
 
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
-  .hdr-nav {
-    position: fixed; inset: 0 0 0 auto; width: min(84vw, 360px);
-    flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px;
-    background: var(--wine-deep); padding: 0 34px;
-    transform: translateX(100%); transition: transform 0.45s var(--ease);
-    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.45);
-  }
-  .hdr-nav.open { transform: none; }
-  .hdr-nav a { font-size: 13px; letter-spacing: 0.26em; }
-  .burger { display: block; position: relative; z-index: 70; }
-  .split, .barra, .visit, .feature { grid-template-columns: 1fr; }
-  .feature__img { min-height: 300px; }
-  .menu { grid-template-columns: 1fr; }
+  .split, .barra { grid-template-columns: 1fr; }
   .framed::before, .framed::after { width: 88px; height: 88px; }
 }
 @media (max-width: 680px) {
-  .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 10px; }
   .hero__cta { gap: 20px; }
-  .hdr-nav .btn, .hero__cta .btn { letter-spacing: 0.32em; }
-  .hours div { max-width: none; }
-  .ftr__in { flex-direction: column; align-items: flex-start; }
+  .hero__cta .btn { letter-spacing: 0.32em; }
 }
 @media (prefers-reduced-motion: reduce) {
   *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }

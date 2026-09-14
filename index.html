@@ -78,11 +78,11 @@
     </button>
 
     <nav class="hdr-nav" id="nav">
-      <a href="#la-carta">La Carta</a>
-      <a href="#la-barra">La Barra</a>
-      <a href="#sfeer">Sfeer</a>
-      <a href="#bezoek">Bezoek</a>
-      <a class="btn" href="#bezoek">Reserveer</a>
+      <a href="la-carta/">La Carta</a>
+      <a href="la-barra/">La Barra</a>
+      <a href="sfeer/">Sfeer</a>
+      <a href="contact/">Contact</a>
+      <a class="btn" href="reserveren/">Reserveer</a>
     </nav>
   </div>
 </header>
@@ -99,8 +99,8 @@
     <p class="hero__sub">Lunch &amp; Bar</p>
     <p class="hero__tag">De ziel van Spanje, gevangen in een glas en geserveerd op een plankje.</p>
     <div class="hero__cta">
-      <a class="btn" href="#bezoek">Reserveer een tafel</a>
-      <a class="btn btn--muted" href="#la-carta">Bekijk onze kaart</a>
+      <a class="btn" href="reserveren/">Reserveer een tafel</a>
+      <a class="btn btn--muted" href="la-carta/">Bekijk onze kaart</a>
     </div>
   </div>
   <div class="hero__scroll" aria-hidden="true">Scroll<span></span></div>
@@ -113,7 +113,7 @@
       <p class="eyebrow">La Experiencia</p>
       <h2 class="stitle">Zinderend Spaans,<br><em>modern geserveerd.</em></h2>
       <p>Wij geloven dat eten meer is dan alleen maar voeding, het is beleving. In Calor combineren we authentieke Spaanse recepten met moderne technieken en lokale seizoensingrediënten. Elke hap een reis naar het zuiden.</p>
-      <a class="btn" href="#la-carta">Ontdek onze kaart</a>
+      <a class="btn" href="la-carta/">Ontdek onze kaart</a>
     </div>
     <div class="framed reveal">
       <img src="assets/img/hero-interior-1.jpg" alt="Het warme, sfeervolle interieur van Calor in Echt" loading="lazy">
@@ -129,109 +129,26 @@
       <p class="eyebrow eyebrow--sand">La Carta</p>
       <h2 class="stitle">Tapas <span class="amp">&amp;</span> Raciones</h2>
       <p style="margin-top:18px">Gedeeld eten is dubbel genieten. Geef door, deel mee en bestel nog wat. Zo doen we dat bij Calor!</p>
+      <p class="carta-categories">Bocadillos · Platos Calientes · Ensaladas · Para Tomar Algo · Niños · Pasteles</p>
     </div>
 
-    <div class="tabs reveal" role="tablist" aria-label="Menukaart">
-      <button class="tab" role="tab" id="t-lunch"   aria-controls="p-lunch"   aria-selected="true">Calor Lunch</button>
-      <button class="tab" role="tab" id="t-bites"   aria-controls="p-bites"   aria-selected="false">Calor Bites</button>
-      <button class="tab" role="tab" id="t-ninos"   aria-controls="p-ninos"   aria-selected="false">Niños</button>
-      <button class="tab" role="tab" id="t-pasteles" aria-controls="p-pasteles" aria-selected="false">Pasteles</button>
+    <div class="menu carta-highlights reveal">
+      <article class="item"><h4 class="item__name">Calor</h4><span class="item__price">€9</span><p class="item__desc">Crispy Jamón Serrano, mozzarella, rucola, parmezaanse kaas, avocado, tomaat en balsamicodressing</p></article>
+      <article class="item"><h4 class="item__name">Twaalf uurtje</h4><span class="item__price">€11</span><p class="item__desc">Soep, desembrood, een kroket naar keuze, een gebakken ei en een frisse salade</p></article>
+      <article class="item"><h4 class="item__name">Loaded nacho's</h4><span class="item__price">€11</span><p class="item__desc">Tortillachips met gemarineerde kippendij, kaas, jalapeño en bosui, geserveerd met salsa, guacamole en zure room</p></article>
+      <article class="item"><h4 class="item__name">Huisgemaakte cheesecake</h4><span class="item__price">€11</span><p class="item__desc">Romige huisgemaakte cheesecake met krokante bodem en vers fruit</p></article>
     </div>
 
-    <!-- LUNCH -->
-    <div class="panel reveal" id="p-lunch" role="tabpanel" aria-labelledby="t-lunch">
-
-      <div class="group">
-        <p class="grouplabel">Bocadillos</p>
-        <div class="menu">
-          <article class="item"><h4 class="item__name">Gezond</h4><span class="item__price">€11</span><p class="item__desc">Ham, jonge kaas, ei, tomaat, komkommer en verse sla met heksenkaas</p></article>
-          <article class="item"><h4 class="item__name">Zalm</h4><span class="item__price">€11</span><p class="item__desc">Gerookte zalm met roomkaas, rode ui, komkommer en frisse sla</p></article>
-          <article class="item"><h4 class="item__name">Spareribvlees</h4><span class="item__price">€9</span><p class="item__desc">Mals spareribvlees met sla, rode ui en aioli</p></article>
-          <article class="item"><h4 class="item__name">Calor</h4><span class="item__price">€9</span><p class="item__desc">Crispy Jamón Serrano, mozzarella, rucola, parmezaanse kaas, avocado, tomaat en balsamicodressing</p></article>
-          <article class="item"><h4 class="item__name">Carpaccio</h4><span class="item__price">€11</span><p class="item__desc">Dungesneden rundercarpaccio met parmezaanse kaas, pijnboompitten, rucola en truffelmayonaise</p></article>
-          <article class="item"><h4 class="item__name">Avocado <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€11</span><p class="item__desc">Avocado met olijfolie, tomaat, rode ui en rucola</p></article>
-          <article class="item"><h4 class="item__name">Caprese <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€11</span><p class="item__desc">Tomaat, basilicum, pesto en rucola</p></article>
-          <article class="item"><h4 class="item__name">Hete kip / Teriyaki</h4><span class="item__price">€11</span><p class="item__desc">Malse kipreepjes in pittige saus of teriyakisaus, sla, komkommer, tomaat en rode ui</p></article>
-          <article class="item"><h4 class="item__name">Brie <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€11</span><p class="item__desc">Brie met honing, walnoten en rucola</p></article>
-        </div>
-      </div>
-
-      <div class="group">
-        <p class="grouplabel">Platos Calientes</p>
-        <div class="menu">
-          <article class="item"><h4 class="item__name">Uitsmijter ham/spek &amp; kaas</h4><span class="item__price">€11</span><p class="item__desc">Drie gebakken eieren op desembrood met kaas en ham of spek, geserveerd met een frisse salade</p></article>
-          <article class="item"><h4 class="item__name">Tomatensoep</h4><span class="item__price">€11</span><p class="item__desc">Huisgemaakte tomatensoep met croutons en bosui, geserveerd met stokbrood en kruidenboter</p></article>
-          <article class="item"><h4 class="item__name">Twaalf uurtje</h4><span class="item__price">€11</span><p class="item__desc">Soep, desembrood, een kroket naar keuze (rundvlees, chorizo of garnaal), een gebakken ei en een frisse salade</p></article>
-          <article class="item"><h4 class="item__name">Kroketten op brood</h4><span class="item__price">€11</span><p class="item__desc">Twee rundvleeskroketten op desembrood, geserveerd met mosterd en een frisse salade</p></article>
-          <article class="item"><h4 class="item__name">Tosti deluxe</h4><span class="item__price">€11</span><p class="item__desc">Rijk belegde tosti met ham, kaas, tomaat en ui, geserveerd met ketchup of curry en een frisse salade</p></article>
-          <article class="item"><h4 class="item__name">Tosti Calor</h4><span class="item__price">€11</span><p class="item__desc">Onze eigen tosti van het huis.</p></article>
-          <article class="item"><h4 class="item__name">Rundvleesburger</h4><span class="item__price">€11</span><p class="item__desc">Rundvleesburger op een burgerbun met sla, tomaat, augurk, ui en burgersaus, geserveerd met friet</p></article>
-        </div>
-      </div>
-
-      <div class="group">
-        <p class="grouplabel">Ensaladas</p>
-        <div class="menu">
-          <article class="item"><h4 class="item__name">Pescado</h4><span class="item__price">€11</span><p class="item__desc">Rijkgevulde salade met gamba's en gerookte zalm, geserveerd met brood en dressing</p></article>
-          <article class="item"><h4 class="item__name">Caesar</h4><span class="item__price">€11</span><p class="item__desc">Sla met gegrilde kip, parmezaanse kaas, croutons en ei, geserveerd met brood en caesardressing</p></article>
-          <article class="item"><h4 class="item__name">Brie</h4><span class="item__price">€11</span><p class="item__desc">Salade met brie, honing, walnoten, cherrytomaatjes, komkommer en avocado, geserveerd met brood</p></article>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- BITES -->
-    <div class="panel reveal" id="p-bites" role="tabpanel" aria-labelledby="t-bites" hidden>
-      <div class="group">
-        <p class="grouplabel">Para Tomar Algo</p>
-        <div class="menu">
-          <article class="item"><h4 class="item__name">Gambas</h4><span class="item__price">€11</span><p class="item__desc">Gebakken gamba's in knoflookolie</p></article>
-          <article class="item"><h4 class="item__name">Calamaris</h4><span class="item__price">€11</span><p class="item__desc">Krokante gefrituurde inktvisringen, geserveerd met aioli</p></article>
-          <article class="item"><h4 class="item__name">Croquetas</h4><span class="item__price">€9</span><p class="item__desc">Krokante kroketjes met een vulling van garnalen of Spaanse chorizo</p></article>
-          <article class="item"><h4 class="item__name">Bloemkoolbites <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€9</span><p class="item__desc">Krokante bloemkoolbites, geserveerd met kruidige yoghurtdip en citroen</p></article>
-          <article class="item"><h4 class="item__name">Zoete aardappelfrietjes</h4><span class="item__price">€9</span><p class="item__desc">Zoete aardappelfrietjes met parmezaanse kaas en truffelmayonaise</p></article>
-          <article class="item"><h4 class="item__name">Olijven <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€11</span><p class="item__desc">Selectie van gemarineerde olijven en knoflook</p></article>
-          <article class="item"><h4 class="item__name">Brood met dips <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€11</span><p class="item__desc">Vers desembrood, geserveerd met kruidenboter, aioli en tapenade</p></article>
-          <article class="item"><h4 class="item__name">Bruschetta <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€9</span><p class="item__desc">Geroosterd brood met tomaat, knoflook, basilicum, olijfolie en balsamicodressing</p></article>
-          <article class="item"><h4 class="item__name">Spaanse gehaktballetjes</h4><span class="item__price">€11</span><p class="item__desc">Traditionele Spaanse gehaktballetjes in tomatensaus</p></article>
-          <article class="item"><h4 class="item__name">Knoflookchampignons <svg class="veg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-label="vegetarisch" role="img"><path d="M12 21c0-7 4-11 9-12-1 8-4 11-9 12Z"/><path d="M12 21C9 16 5 14 3 14c1 4 4 7 9 7Z"/></svg></h4><span class="item__price">€11</span><p class="item__desc">Gebakken champignons met knoflook en verse kruiden</p></article>
-          <article class="item"><h4 class="item__name">Loaded nacho's</h4><span class="item__price">€11</span><p class="item__desc">Tortillachips met gemarineerde kippendij, kaas, jalapeño en bosui, geserveerd met salsa, guacamole en zure room</p></article>
-        </div>
-      </div>
-    </div>
-
-    <!-- NIÑOS -->
-    <div class="panel reveal" id="p-ninos" role="tabpanel" aria-labelledby="t-ninos" hidden>
-      <div class="group">
-        <p class="grouplabel">Niños</p>
-        <div class="menu">
-          <article class="item"><h4 class="item__name">Soepje</h4><span class="item__price">€11</span><p class="item__desc">Huisgemaakte tomatensoep, geserveerd met brood en een verrassing</p></article>
-          <article class="item"><h4 class="item__name">Kindertosti</h4><span class="item__price">€11</span><p class="item__desc">Geroosterd brood met ham en kaas, geserveerd met ketchup en een stokje met komkommer en cherrytomaatjes</p></article>
-          <article class="item"><h4 class="item__name">Mini uitsmijter</h4><span class="item__price">€9</span><p class="item__desc">Eén of twee gebakken eieren op brood met ham en kaas, geserveerd met ketchup</p></article>
-          <article class="item"><h4 class="item__name">Friet met snack</h4><span class="item__price">€9</span><p class="item__desc">Portie friet met keuze uit kroket, frikandel of kipnuggets, geserveerd met appelmoes en een stokje met komkommer en cherrytomaatjes</p></article>
-        </div>
-      </div>
-    </div>
-
-    <!-- PASTELES -->
-    <div class="panel reveal" id="p-pasteles" role="tabpanel" aria-labelledby="t-pasteles" hidden>
-      <div class="group">
-        <p class="grouplabel">Pasteles</p>
-        <div class="menu">
-          <article class="item"><h4 class="item__name">Huisgemaakte cheesecake</h4><span class="item__price">€11</span><p class="item__desc">Romige huisgemaakte cheesecake met krokante bodem en vers fruit</p></article>
-          <article class="item"><h4 class="item__name">Brownie</h4><span class="item__price">€11</span><p class="item__desc">Huisgemaakte chocoladebrownie met chocoladedrizzle</p></article>
-          <article class="item"><h4 class="item__name">Vlaai</h4><span class="item__price">€11</span><p class="item__desc">Verse vlaai van het moment</p></article>
-        </div>
-      </div>
-    </div>
-
+    <p class="reveal" style="text-align:center;margin-top:clamp(34px,5vw,52px)">
+      <a class="btn" href="la-carta/">Bekijk de volledige kaart</a>
+    </p>
   </div>
 </section>
 
 <!-- ========== AANBEVOLEN / TABLA DE BEBIDAS ========== -->
 <section class="sec" style="padding-block:0">
   <div class="feature">
-    <div class="feature__img" role="img" aria-label="Een tafel vol Spaanse tapas bij Calor"></div>
+    <div class="feature__img" role="img" aria-label="Een tafel vol Spaanse tapas bij Calor" style="background-image:url('assets/img/tapas-spread.jpg')"></div>
     <div class="feature__box reveal">
       <p class="eyebrow">Aanbevolen</p>
       <h3 class="stitle" style="font-size:clamp(1.8rem,3.4vw,2.6rem)">Tabla de Bebidas</h3>
@@ -249,7 +166,7 @@
         </div>
       </div>
 
-      <a class="btn" style="margin-top:28px" href="#bezoek">Reserveer je plank</a>
+      <a class="btn" style="margin-top:28px" href="reserveren/">Reserveer je tafel</a>
     </div>
   </div>
 </section>
@@ -257,7 +174,7 @@
 <!-- ========== NEON QUOTE ========== -->
 <section class="neon">
   <div class="wrap">
-    <h2>Viva el Calor</h2>
+    <h2>VIVA EL CALOR</h2>
     <p>&ldquo;La vida es corta y los tapas son pequeños, ¡pide otro plato!&rdquo;</p>
   </div>
 </section>
@@ -270,16 +187,16 @@
     </div>
     <div class="reveal">
       <p class="eyebrow">La Barra</p>
-      <h2 class="stitle">Signature<br><em>cocktails</em></h2>
-      <p style="margin-top:22px;max-width:46ch">Onze barmannen zetten klassiekers om in iets eigens. Met Spaanse likeur, verse citrus en oog voor detail.</p>
+      <h2 class="stitle">Cócteles <br><em>&amp; copas</em></h2>
+      <p style="margin-top:22px;max-width:46ch">Onze barmannen zetten klassiekers om in iets eigens. Van signature cocktails tot Spaanse spritz en alcoholvrije mocktails.</p>
 
       <div class="menu barra__list" style="grid-template-columns:1fr">
-        <article class="item"><h4 class="item__name">Sangría de la Casa</h4><span class="item__price">€7</span><p class="item__desc">Rode wijn · brandy · seizoensfruit</p></article>
-        <article class="item"><h4 class="item__name">El Calor</h4><span class="item__price">€7</span><p class="item__desc">Mezcal · hibiscus · limoen · chili rim</p></article>
-        <article class="item"><h4 class="item__name">Espresso Martini</h4><span class="item__price">€7</span><p class="item__desc">Vodka · espresso · kahlúa · crema</p></article>
+        <article class="item"><h4 class="item__name">Mojito</h4><span class="item__price">€9</span><p class="item__desc">Witte rum · verse munt · limoen · bruiswater</p></article>
+        <article class="item"><h4 class="item__name">Aperol</h4><span class="item__price">€9</span><p class="item__desc">Sinaasappeltonen · bitters · bruisende prosecco</p></article>
+        <article class="item"><h4 class="item__name">Espresso Martini</h4><span class="item__price">€9</span><p class="item__desc">Vodka · verse espresso · koffielikeur</p></article>
       </div>
 
-      <a class="btn" style="margin-top:32px" href="#bezoek">Ontdek onze drankjes</a>
+      <a class="btn" style="margin-top:32px" href="la-barra/">Ontdek onze drankjes</a>
     </div>
   </div>
 </section>
@@ -295,10 +212,10 @@
       <figure class="g1"><img src="assets/img/bartender.jpg" alt="Barman aan het werk bij Calor" loading="lazy"></figure>
       <figure class="g2"><img src="assets/img/cocktails.jpg" alt="Cocktails onder het neonlicht" loading="lazy"></figure>
       <figure class="g3"><img src="assets/img/neon-viva.jpg" alt="Neonbord Viva el Calor" loading="lazy"></figure>
-      <figure class="g4"><img src="assets/img/jamon.jpg" alt="Jamón serrano wordt gesneden" loading="lazy"></figure>
-      <figure class="g5"><img src="assets/img/tapas-spread.jpg" alt="Tapas om te delen" loading="lazy"></figure>
-      <figure class="g6"><img src="assets/img/hero-interior-1.jpg" alt="Het interieur van Calor in de avond" loading="lazy"></figure>
     </div>
+    <p class="gallery-teaser-cta reveal">
+      <a class="btn" href="sfeer/">Bekijk de volledige galerij</a>
+    </p>
   </div>
 </section>
 
@@ -334,7 +251,7 @@
         </div>
       </div>
 
-      <a class="btn btn--sand" style="margin-top:34px" href="mailto:info@calor-echt.nl?subject=Reservering%20Calor">Reserveer een tafel</a>
+      <a class="btn btn--sand" style="margin-top:34px" href="reserveren/">Reserveer een tafel</a>
     </div>
 
     <div class="map reveal">
@@ -353,19 +270,20 @@
       <img src="assets/img/Calor-text-logo-yellow.png" alt="Calor Lunch &amp; Bar" width="118" height="31" loading="lazy">
     </a>
     <nav class="ftr__links" aria-label="Footer">
-      <a href="#la-carta">La Carta</a>
-      <a href="#la-barra">La Barra</a>
-      <a href="#sfeer">Sfeer</a>
-      <a href="#bezoek">Bezoek</a>
+      <a href="la-carta/">La Carta</a>
+      <a href="la-barra/">La Barra</a>
+      <a href="sfeer/">Sfeer</a>
+      <a href="contact/">Contact</a>
       <a href="https://www.instagram.com/calor.echt/" target="_blank" rel="noopener">Instagram</a>
     </nav>
-    <p class="ftr__copy">© <span id="yr">2026</span> Calor Lunch &amp; Bar · Bovenstestraat 4, 6101 EK Echt · <a href="mailto:info@calor-echt.nl">info@calor-echt.nl</a></p>
+    <p class="ftr__copy">© <span id="yr">2026</span> Calor Lunch &amp; Bar · Bovenstestraat 4, 6101 EK Echt · <a href="mailto:info@calor-echt.nl">info@calor-echt.nl</a> · <a href="https://idento.be/" target="_blank" rel="noopener">Webdesign by Idento</a></p>
   </div>
 </footer>
 
 <script src="assets/js/cookie-consent.js" data-privacy-url="privacy/" defer></script>
 <script src="assets/js/analytics.js" defer></script>
 <script src="assets/js/site.js" defer></script>
-<script src="assets/js/home.js" defer></script>
+<script src="assets/js/site-ui.js" defer></script>
+<script src="https://book.restomanager.net/widget.js" data-base-url="https://book.restomanager.net" data-business-id="6a560065063dec41c209df8c" data-widget-type="floating" data-floating="true"></script>
 </body>
 </html>

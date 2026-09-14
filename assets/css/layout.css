@@ -1,7 +1,7 @@
 /* ==========================================================================
-   layout.css — site-chrome & structuur die op ELKE pagina hetzelfde is:
-   container, nav, footer, sectie-ritme, scroll-progressbar, reveal-animatie.
-   (De homepage gebruikt daarnaast een eigen header/footer — zie pages/home.css.)
+   layout.css — site-chrome die op ELKE pagina hetzelfde is: container,
+   merkheader (.hdr), merkfooter (.ftr), sectieritme (.sec/.botanic) en
+   reveal-animatie.
    ========================================================================== */
 
 /* — Screenreader-only utility — */
@@ -44,163 +44,95 @@
 }
 
 
-/* — Section scaffolding — */
-.section { padding-block: var(--sp-9); }
-.section-head {
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-4);
-  max-width: 640px;
-  margin-bottom: var(--sp-8);
-}
-.section-head h2 { font-size: var(--fs-h2); line-height: 1.08; color: var(--accent); }
-.section-head p { color: var(--sand-500); font-size: var(--fs-lead); line-height: 1.55; }
-.section-alt { background: var(--surface); }
-
-
-/* — Page header — compacte kop voor subpagina's (geen volledige hero). — */
-.page-header {
-  position: relative;
-  padding-top: calc(4.5rem + var(--sp-8));
-  padding-bottom: var(--sp-8);
-  background: var(--inverse-bg);
-  color: var(--inverse-text);
-  overflow: hidden;
-}
-.page-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(60% 90% at 12% 0%, var(--accent-veil), transparent 65%),
-    radial-gradient(50% 80% at 95% 100%, var(--brand-veil), transparent 70%);
-  opacity: 0.35;
-  pointer-events: none;
-}
-.page-header > .wrap { position: relative; z-index: 1; }
-.page-header .eyebrow { color: var(--accent-inverse); }
-.page-header h1 {
-  margin-top: var(--sp-3);
-  color: var(--inverse-text);
-  font-size: var(--fs-h2);
-  line-height: 1.08;
-  max-width: 22ch;
-}
-.page-header p {
-  margin-top: var(--sp-4);
-  max-width: 58ch;
-  color: var(--inverse-text-muted);
-  font-size: var(--fs-lead);
-  line-height: 1.55;
-}
-
-/* — Breadcrumb — */
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-  margin-top: var(--sp-5);
-  font-size: var(--fs-eyebrow);
-  letter-spacing: 0.08em;
-  color: var(--inverse-text-soft);
-}
-.breadcrumb a { text-decoration: none; transition: color 0.2s ease; }
-.breadcrumb a:hover { color: var(--accent-inverse); }
-.breadcrumb span[aria-current] { color: var(--inverse-text-emphasis); }
-
-
-/* — Nav (gebruikt door subpagina's: contact, privacy) — */
-.nav {
+/* — Merkheader (.hdr) — gebruikt op home, La Carta, La Barra: vaste balk
+   met logo, uitklapbare mobiele nav en een "is-stuck"-staat bij scrollen. — */
+.hdr {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  background: var(--inverse-veil-nav);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  border-bottom: 1px solid var(--hairline);
+  inset: 0 0 auto 0;
+  z-index: 60;
+  padding: 22px 0;
+  transition: background 0.4s var(--ease), padding 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 4.5rem;
+.hdr.is-stuck {
+  background: rgba(42, 14, 14, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 12px 0;
+  box-shadow: 0 1px 0 var(--sand-dim);
 }
-.brand-mark {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.15rem;
-  color: var(--inverse-text);
-}
-.brand-mark svg { flex-shrink: 0; }
-.nav-links-list a:not(.btn) {
-  text-decoration: none;
+.hdr__in { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.hdr__logo img { width: 132px; height: auto; }
+.hdr-nav { display: flex; align-items: center; gap: 38px; }
+.hdr-nav a {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
-  color: var(--inverse-text-bright);
-  transition: color 0.2s ease;
+  color: var(--cream-050);
+  opacity: 0.85;
+  transition: color 0.25s, opacity 0.25s;
 }
-.nav-links-list a:not(.btn):hover { color: var(--accent-inverse); }
-.nav-links-list a[aria-current="page"] {
-  color: var(--accent-inverse);
+.hdr-nav a:hover { color: var(--gold-500); opacity: 1; }
+.hdr-nav a[aria-current="page"] { color: var(--gold-500); opacity: 1; }
+.hdr-nav .btn { margin-left: 6px; }
+
+.burger {
+  display: none;
+  width: 44px; height: 44px;
+  border: 0; background: none; cursor: pointer;
+  padding: 10px; margin-right: -10px;
 }
-.nav-cta { display: flex; align-items: center; gap: var(--sp-5); }
-.nav-links-list { display: flex; gap: var(--sp-6); }
-@media (max-width: 760px) {
-  .nav-links-list { display: none; }
+.burger span { display: block; height: 1.5px; background: var(--gold-500); margin: 5px 0; transition: transform 0.35s var(--ease), opacity 0.25s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+@media (max-width: 1024px) {
+  .hdr-nav {
+    position: fixed; inset: 0 0 0 auto; width: min(84vw, 360px);
+    flex-direction: column; align-items: flex-start; justify-content: center; gap: 26px;
+    background: var(--wine-900); padding: 0 34px;
+    transform: translateX(100%); transition: transform 0.45s var(--ease);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.45);
+  }
+  .hdr-nav.open { transform: none; }
+  .hdr-nav a { font-size: 13px; letter-spacing: 0.26em; }
+  .burger { display: block; position: relative; z-index: 70; }
 }
-@media (max-width: 420px) {
-  .brand-mark { font-size: 1rem; gap: 0.4rem; }
-  .brand-mark svg { width: 24px; height: 24px; }
+@media (max-width: 680px) {
+  .hdr-nav .btn { letter-spacing: 0.32em; }
 }
 
 
-/* — Footer (gebruikt door subpagina's: contact, privacy) — */
-footer {
-  background: var(--inverse-bg-strong);
-  color: var(--inverse-text-dim);
-  padding-block: var(--sp-6);
+/* — Merkfooter (.ftr) — gebruikt op home, La Carta, La Barra. — */
+.ftr { background: var(--wine-900); padding-block: 56px; border-top: 1px solid var(--sand-dim); }
+.ftr__in { display: flex; flex-wrap: wrap; gap: 26px 40px; align-items: center; justify-content: space-between; }
+.ftr img { width: 118px; }
+.ftr__links { display: flex; flex-wrap: wrap; gap: 22px; }
+.ftr__links a { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sand-500); opacity: 0.8; }
+.ftr__links a:hover { color: var(--gold-500); opacity: 1; }
+.ftr__links a[aria-current="page"] { color: var(--gold-500); opacity: 1; }
+.ftr__copy { font-size: 12px; color: var(--muted-400); opacity: 0.7; width: 100%; padding-top: 24px; border-top: 1px solid var(--hairline-soft); margin-top: 8px; }
+@media (max-width: 680px) {
+  .ftr__in { flex-direction: column; align-items: flex-start; }
 }
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--sp-3) var(--sp-6);
-  font-size: 0.875rem;
-}
-.footer-inner strong { color: var(--inverse-text); font-family: var(--font-display); font-weight: 600; }
-.footer-legal { opacity: 0.85; }
-.footer-legal a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--inverse-underline);
-  text-underline-offset: 2px;
-}
-.footer-legal a:hover { text-decoration-color: var(--accent-inverse); }
 
 
-/* — Progress bar — */
-.progress-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  z-index: 60;
-  pointer-events: none;
+/* — Volle-breedte sectieblokken (.sec) — het bordeaux/donkere sectieritme
+   van de merkpagina's, met een optionele botanische lijnprint erachter. — */
+.sec { padding-block: var(--sec); position: relative; }
+.sec--card { background: var(--wine-card); position: relative; overflow: hidden; }
+.sec--deep { background: var(--wine-900); }
+
+.botanic {
+  position: absolute; inset: 0; opacity: 0.055; pointer-events: none;
+  background-repeat: repeat; background-size: 520px auto;
 }
-.progress-bar-fill {
-  height: 100%;
-  width: 100%;
-  transform: scaleX(0);
-  transform-origin: left center;
-  background: linear-gradient(90deg, var(--accent), var(--rose-500));
-  will-change: transform;
-}
-html.js .progress-bar-fill { transition: transform 0.12s linear; }
+
+/* Eerste sectie van een pagina zonder hero: start direct onder de vaste
+   .hdr-header, zoals la-carta/, la-barra/, reserveren/, sfeer/, contact/
+   en privacy/. */
+.page-intro { padding-top: calc(4.5rem + var(--sp-8)); }
 
 
 /* — Reveal-on-scroll (progressive enhancement) — */
@@ -216,5 +148,4 @@ html.js .reveal.is-visible { transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   html.js .reveal { transition: none; opacity: 1; transform: none; }
-  .progress-bar-fill { transition: none; }
 }

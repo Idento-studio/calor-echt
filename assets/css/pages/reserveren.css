@@ -1,0 +1,30 @@
+/* ==========================================================================
+   pages/reserveren.css — uitsluitend voor reserveren/index.html.
+   Insluitstijlen voor de RestoManager-reserveringsiframe, exact zoals door
+   RestoManager aangeleverd (klassennamen bewust ongewijzigd gelaten).
+   ========================================================================== */
+
+.restomanager-container {
+  position: relative;
+  width: 100%;
+  min-height: 900px;
+  height: 900px;
+  overflow: hidden;
+  padding-top: 100%;
+  margin-top: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius-lg);
+}
+.restomanager-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.reserve-fallback { text-align: center; margin-top: clamp(28px, 4vw, 44px); color: var(--sand-500); font-size: 14.5px; }
+.reserve-fallback a { color: var(--gold-500); }
+.reserve-fallback a:hover { color: var(--cream-050); }

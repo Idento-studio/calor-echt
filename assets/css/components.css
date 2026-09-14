@@ -1,6 +1,7 @@
 /* ==========================================================================
    components.css — herbruikbare UI-onderdelen. Bruikbaar op elke pagina:
-   eyebrow, tekstknoppen, formulier + infokaart, openingsuren, cookiebanner.
+   eyebrow, tekstknoppen, sectiekop, menukaart, aanbevolen-blok, formulier +
+   infokaart, openingsuren, cookiebanner.
    ========================================================================== */
 
 /* — Eyebrow / kicker — */
@@ -52,16 +53,119 @@
 .btn[aria-busy="true"] { opacity: 0.65; pointer-events: none; }
 
 
-/* — Contact — */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--sp-8);
-  align-items: start;
+/* — Sectiekop (grote serif-titel + intro) — gebruikt op home én menupagina's — */
+.stitle {
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  color: var(--gold-500);
+  letter-spacing: -0.01em;
 }
-@media (max-width: 900px) {
-  .contact-grid { grid-template-columns: 1fr; }
+.stitle em { font-style: italic; color: var(--cream-050); }
+.stitle .amp { color: var(--cream-050); font-style: italic; }
+
+.carta__head { text-align: center; max-width: 66ch; margin: 0 auto clamp(34px, 5vw, 54px); }
+.carta__head p { color: var(--sand-500); opacity: 0.85; }
+
+
+/* — Menukaart: groep-label + lijst met gerechten/drankjes — */
+.grouplabel {
+  display: inline-block;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.34em; text-transform: uppercase;
+  color: var(--sand-400);
+  background: var(--wine-card-d);
+  padding: 9px 20px; margin: 0 0 26px;
+  border: 1px solid var(--sand-dim);
 }
+.group + .group { margin-top: clamp(46px, 6vw, 72px); }
+
+.menu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(40px, 6vw, 80px); }
+.item {
+  display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: baseline;
+  padding: 18px 0; border-bottom: 1px solid var(--hairline-soft);
+}
+.item__name {
+  font-family: var(--font-display); font-size: clamp(1.05rem, 1.5vw, 1.28rem); font-weight: 500;
+  color: var(--cream-050); line-height: 1.3; margin: 0;
+}
+.item__price {
+  font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--wine-card-d); background: var(--sand-500);
+  border-radius: 999px; padding: 5px 13px; white-space: nowrap;
+  align-self: center;
+}
+.item__desc { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.7; color: var(--muted-400); margin: 0; max-width: 52ch; }
+.veg { display: inline-block; margin-left: 8px; vertical-align: middle; width: 15px; height: 15px; color: var(--sand-500); opacity: 0.9; }
+
+@media (max-width: 1024px) {
+  .menu { grid-template-columns: 1fr; }
+}
+
+
+/* — Aanbevolen-blok (afbeelding + tekstvak), bv. Tabla de Bebidas — */
+.feature { display: grid; grid-template-columns: 1.05fr 1fr; align-items: stretch; gap: 0; }
+.feature__img { min-height: clamp(300px, 42vw, 560px); background-size: cover; background-position: center; background-repeat: no-repeat; }
+.feature__box { background: var(--wine-700); padding: clamp(34px, 5vw, 72px); display: flex; flex-direction: column; justify-content: center; }
+.feature__price { font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.8rem); color: var(--gold-500); margin: 10px 0 22px; }
+.plank { border-top: 1px solid var(--hairline-soft); padding: 16px 0; display: grid; grid-template-columns: 1fr auto; gap: 4px 18px; align-items: center; }
+.plank h4 { font-size: 1.05rem; font-weight: 500; color: var(--cream-050); margin: 0; }
+.plank p { grid-column: 1/-1; font-size: 13px; margin: 0; color: var(--muted-400); }
+.plank .item__price { align-self: center; }
+
+@media (max-width: 1024px) {
+  .feature { grid-template-columns: 1fr; }
+  .feature__img { min-height: 300px; }
+}
+
+
+/* — Fotogalerij (masonry-achtig grid) — gebruikt op home (teaser) en de
+   volledige Sfeer-pagina. — */
+.gallery {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 12px; gap: 14px; margin-top: clamp(34px, 5vw, 54px);
+}
+.gallery figure { margin: 0; overflow: hidden; background: var(--wine-900); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease), filter 0.6s var(--ease); filter: saturate(0.95); }
+.gallery figure:hover img { transform: scale(1.06); filter: saturate(1.15); }
+.g1 { grid-row: span 40; }
+.g2 { grid-row: span 32; }
+.g3 { grid-row: span 18; }
+.g4 { grid-row: span 40; }
+.g5 { grid-row: span 32; }
+.g6 { grid-row: span 22; }
+@media (max-width: 680px) {
+  .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 10px; }
+}
+
+
+/* — Bezoek-/contactblok (adres, uren, contact + kaart) — gebruikt op home
+   en de volledige Contact-pagina. — */
+.visit { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
+.info { margin-top: 34px; display: grid; gap: 30px; }
+.info h3 {
+  font-family: var(--font-body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.34em; text-transform: uppercase; color: var(--brand); margin: 0 0 12px;
+}
+.info p, .info a { color: var(--sand-500); font-size: 14.5px; line-height: 1.9; }
+.info a:hover { color: var(--gold-500); }
+.hours { display: grid; gap: 2px; }
+.hours div { display: flex; justify-content: space-between; max-width: 290px; gap: 20px; color: var(--sand-500); font-size: 14.5px; }
+.hours span:first-child { color: var(--muted-400); }
+.map { border: 1px solid var(--sand-dim); overflow: hidden; min-height: 360px; }
+.map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; filter: grayscale(0.35) contrast(1.05); }
+@media (max-width: 1024px) {
+  .visit { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .hours div { max-width: none; }
+}
+
+
+/* — RestoManager-reserveringswidget: het widget-eigen iframe krijgt van
+   de browser soms een ondoorzichtige witte achtergrond; forceer transparant
+   zodat enkel de eigen knoppen van de widget zichtbaar blijven. — */
+#restomanager-iframe { background: transparent !important; color-scheme: light; }
+
+
+/* — Contactformulier — */
 .form-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -98,46 +202,6 @@
 }
 .form-card .btn-primary { margin-top: var(--sp-6); }
 .form-hint { margin-top: var(--sp-3); font-size: 0.8125rem; color: var(--muted-400); }
-
-.info-card {
-  background: var(--inverse-bg);
-  color: var(--inverse-text);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: clamp(1.5rem, 1.1rem + 1.6vw, var(--sp-7));
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-6);
-}
-.info-row { display: flex; gap: var(--sp-4); align-items: flex-start; }
-.info-row svg { flex-shrink: 0; margin-top: 0.15rem; color: var(--accent-inverse); }
-.info-row h4 {
-  font-family: var(--font-body);
-  font-size: var(--fs-small);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--inverse-text-dim);
-  margin: 0 0 0.3rem;
-}
-.info-row a { text-decoration: none; }
-.info-row a:hover { color: var(--accent-inverse); }
-.hours-table { width: 100%; border-collapse: collapse; font-size: var(--fs-small); }
-.hours-table th {
-  text-align: left;
-  font-weight: 600;
-  color: var(--accent-inverse);
-  padding-bottom: 0.4rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.hours-table td {
-  padding: 0.3rem 0;
-  color: var(--inverse-text-bright);
-  border-top: 1px solid var(--inverse-hairline);
-}
-.hours-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
 
 
 /* — Formulier: verplicht-markering, validatie en statusmelding — */

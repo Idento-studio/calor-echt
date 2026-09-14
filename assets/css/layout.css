@@ -154,9 +154,16 @@
 .sec--card { background: var(--wine-card); position: relative; overflow: hidden; }
 .sec--deep { background: var(--wine-900); }
 
+/* Lijntekening-patroon achter kaart-secties. De bron is een illustratie op
+   zwarte grond; mix-blend-mode:screen maakt het zwart onzichtbaar (het
+   versmelt met de sectie-achtergrond) en laat enkel de witte lijntekening
+   zien — geen aparte transparante versie van de afbeelding nodig. */
 .botanic {
-  position: absolute; inset: 0; opacity: 0.055; pointer-events: none;
-  background-repeat: repeat; background-size: 520px auto;
+  position: absolute; inset: 0; opacity: 0.03; pointer-events: none;
+  background-image: url("../img/pattern-food.png");
+  background-repeat: repeat;
+  background-size: 640px auto;
+  mix-blend-mode: screen;
 }
 
 /* Eerste sectie van een pagina zonder hero: start direct onder de vaste

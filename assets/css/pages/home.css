@@ -58,7 +58,7 @@
   opacity: 0.9;
   margin-bottom: clamp(10px, 2vw, 22px);
 }
-.hero__logo { width: min(100%, 820px); margin: 0 auto; filter: drop-shadow(0 0 46px rgba(241, 214, 138, 0.28)); }
+.hero__logo { width: min(100%, 820px); height: auto; margin: 0 auto; filter: drop-shadow(0 0 46px rgba(241, 214, 138, 0.28)); }
 .hero__sub {
   font-family: var(--serif);
   font-style: italic;
@@ -155,6 +155,14 @@
 @media (max-width: 680px) {
   .hero__cta { gap: 20px; }
   .hero__cta .btn { letter-spacing: 0.32em; }
+}
+@media (max-height: 480px) {
+  /* Korte viewport (landscape op een telefoon, of een klein browservenster):
+     de hero-inhoud is dan hoger dan het scherm, waardoor de scrollhint
+     onderaan over de CTA-knoppen valt. Minder lucht, en de hint verdwijnt
+     — op zo'n korte viewport is "scroll" toch meteen duidelijk. */
+  .hero { padding: 90px 0 40px; }
+  .hero__scroll { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }

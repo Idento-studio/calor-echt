@@ -1,137 +1,55 @@
 /* ==========================================================================
    components.css — herbruikbare UI-onderdelen. Bruikbaar op elke pagina:
-   eyebrow, buttons, quote-cards, formulier + infokaart, openingsuren, FAQ.
+   eyebrow, tekstknoppen, formulier + infokaart, openingsuren, cookiebanner.
    ========================================================================== */
 
-/* — Eyebrow — */
+/* — Eyebrow / kicker — */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
   font-family: var(--font-body);
-  font-size: var(--fs-eyebrow);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
-  color: var(--accent-ink);
+  color: var(--brand);
+  display: block;
+  margin-bottom: 0;
 }
-.eyebrow::before {
-  content: "";
-  width: 22px;
-  height: 2px;
-  background: var(--accent);
-  display: inline-block;
-}
+.eyebrow--sand { color: var(--sand-500); }
 
-/* — Buttons — */
+/* — Tekstknop: geen vulling, uppercase, met een lijntje dat uitschuift — */
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--sp-2);
+  gap: 16px;
   font-family: var(--font-body);
+  font-size: 11px;
   font-weight: 600;
-  font-size: 0.9375rem;
-  letter-spacing: 0.01em;
-  padding: 0.85rem 1.6rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: none;
+  border: 0;
+  padding: 0;
   cursor: pointer;
   text-decoration: none;
-  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.25s ease;
-  will-change: transform;
+  transition: color 0.3s var(--ease);
 }
-.btn-primary {
-  background: var(--accent);
-  color: var(--text-strong);
-  box-shadow: 0 14px 30px -12px var(--accent-shadow);
-}
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 38px -14px var(--accent-shadow-strong); }
-.btn-ghost {
-  background: transparent;
-  border-color: var(--inverse-border-soft);
-  color: var(--inverse-text);
-}
-.btn-ghost:hover { transform: translateY(-3px); background: var(--inverse-hover); }
-.btn-outline {
-  background: transparent;
-  border-color: var(--border);
-  color: var(--text);
-}
-.btn-outline:hover { transform: translateY(-3px); border-color: var(--accent-ink); background: var(--surface); }
-
-
-/* — Nav CTA: calm pulse + shine sweep on primary buttons — */
-.nav-pulse-btn { position: relative; }
-.nav-pulse-btn::before {
+.btn::after {
   content: "";
-  position: absolute;
-  inset: -7px;
-  border-radius: 999px;
-  background: radial-gradient(circle, var(--accent-veil-strong), transparent 72%);
-  opacity: 0.4;
-  transform: scale(0.9);
-  z-index: -1;
-  animation: btn-breathe 3.4s ease-in-out infinite;
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.35s var(--ease);
 }
-@keyframes btn-breathe {
-  0%, 100% { opacity: 0.32; transform: scale(0.88); }
-  50% { opacity: 0.75; transform: scale(1.14); }
-}
-.btn-primary { position: relative; overflow: hidden; }
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 40%; height: 100%;
-  background: linear-gradient(115deg, transparent, var(--sheen), transparent);
-  transform: translateX(-260%) skewX(-12deg);
-  opacity: 0;
-  transition: transform 0.75s var(--ease), opacity 0.3s ease;
-}
-.btn-primary:hover::after, .btn-primary:focus-visible::after {
-  transform: translateX(340%) skewX(-12deg);
-  opacity: 1;
-}
-
-
-
-/* — Testimonials — */
-.quote-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--sp-6);
-}
-@media (max-width: 760px) {
-  .quote-row { grid-template-columns: 1fr; }
-}
-.quote-card {
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: var(--sp-6);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-4);
-  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
-}
-.quote-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
-.stars { display: flex; gap: 0.2rem; color: var(--accent); }
-.quote-card p.quote-text {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  line-height: 1.5;
-  color: var(--text-strong);
-  font-weight: 500;
-}
-.quote-attr {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  font-size: var(--fs-small);
-  color: var(--text-muted);
-}
-.quote-attr .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--muted-accent); }
+.btn:hover { color: var(--cream-050); }
+.btn:hover::after { width: 70px; }
+.btn-primary { color: var(--accent); }
+.btn-ghost { color: var(--inverse-text); }
+.btn-outline { color: var(--sand-500); }
+.btn--muted { color: var(--muted-400); }
+.btn--sand { color: var(--sand-500); }
+.btn[aria-busy="true"] { opacity: 0.65; pointer-events: none; }
 
 
 /* — Contact — */
@@ -145,7 +63,7 @@
   .contact-grid { grid-template-columns: 1fr; }
 }
 .form-card {
-  background: var(--surface-raised);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: clamp(1.5rem, 1.1rem + 1.6vw, var(--sp-7));
@@ -157,33 +75,34 @@
 .field label {
   font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--sand-500);
 }
 .field input, .field textarea {
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  color: var(--text-strong);
-  background: var(--bg);
+  color: var(--cream-050);
+  background: var(--wine-card-d);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   padding: 0.8rem 0.95rem;
   resize: vertical;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted-400); opacity: 0.8; }
 .field input:focus, .field textarea:focus {
   outline: 3px solid var(--accent-ring);
   outline-offset: 1px;
-  border-color: var(--accent-ink);
-  background: var(--surface-raised);
+  border-color: var(--accent);
 }
-.form-card .btn-primary { margin-top: var(--sp-6); width: 100%; }
-.form-hint { margin-top: var(--sp-3); font-size: 0.8125rem; color: var(--text-muted); }
+.form-card .btn-primary { margin-top: var(--sp-6); }
+.form-hint { margin-top: var(--sp-3); font-size: 0.8125rem; color: var(--muted-400); }
 
 .info-card {
   background: var(--inverse-bg);
   color: var(--inverse-text);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: clamp(1.5rem, 1.1rem + 1.6vw, var(--sp-7));
   display: flex;
@@ -219,32 +138,6 @@
   border-top: 1px solid var(--inverse-hairline);
 }
 .hours-table td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
-
-
-/* — FAQ — */
-.faq-list { display: flex; flex-direction: column; gap: var(--sp-3); max-width: 760px; }
-.faq-item {
-  background: var(--surface-raised);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: var(--sp-5);
-}
-.faq-item summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-4);
-  cursor: pointer;
-  list-style: none;
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--text-strong);
-}
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary .faq-chevron { flex-shrink: 0; transition: transform 0.35s var(--ease); color: var(--accent-ink); }
-.faq-item[open] summary .faq-chevron { transform: rotate(135deg); }
-.faq-item p { margin-top: var(--sp-3); color: var(--text-muted); font-size: var(--fs-small); line-height: 1.6; }
 
 
 /* — Formulier: verplicht-markering, validatie en statusmelding — */
@@ -301,8 +194,6 @@
   border: 0;
 }
 
-.btn[aria-busy="true"] { opacity: 0.65; pointer-events: none; }
-
 
 /* — Cookiebanner — */
 .cookie-banner {
@@ -313,7 +204,7 @@
   z-index: 90;
   max-width: 480px;
   margin-inline: auto;
-  background: var(--surface-raised);
+  background: var(--inverse-bg-strong);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: var(--sp-5);
@@ -324,19 +215,15 @@
 .cookie-banner.is-visible { transform: translateY(0); }
 .cookie-banner p {
   font-size: var(--fs-small);
-  color: var(--text-muted);
+  color: var(--inverse-text-bright);
   line-height: 1.55;
 }
-.cookie-banner p a { color: var(--accent-ink); font-weight: 600; }
+.cookie-banner p a { color: var(--accent-inverse); font-weight: 600; }
 .cookie-actions {
   margin-top: var(--sp-4);
   display: flex;
-  gap: var(--sp-3);
+  gap: var(--sp-5);
   flex-wrap: wrap;
-}
-.cookie-actions .btn {
-  padding: 0.6rem 1.2rem;
-  font-size: 0.875rem;
 }
 @media (max-width: 560px) {
   .cookie-banner { left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-4); }
@@ -345,7 +232,6 @@
 
 /* — Motion policy: componenten — */
 @media (prefers-reduced-motion: reduce) {
-  .nav-pulse-btn::before { animation: none !important; }
-  .btn, .quote-card, .faq-item summary .faq-chevron { transition: none; }
+  .btn { transition: none; }
   .cookie-banner { transition: none; }
 }

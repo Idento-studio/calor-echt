@@ -1,122 +1,97 @@
 /* ==========================================================================
-   brand.css — de merkbasis van de site
+   brand.css — de merkbasis van de site (Calor Lunch & Bar, Echt)
    Enige plek waar kleuren, fonts, spacing en radii gedefinieerd worden.
    Wijzig hier en de hele site volgt. Bevat GEEN component- of paginastijlen.
 
-   ── PER KLANT AAN TE PASSEN ──────────────────────────────────────────────
-   Het kleurenpalet hieronder wordt per klant aangepast op basis van
-   sectie 6 van PROJECT-BRIEF.md (huisstijl: kleuren, logo, fonts, tone of
-   voice). De tokens die er nu staan zijn een NEUTRAAL STARTPUNT — een
-   warm, aards palet dat op zichzelf voor niemand specifiek is. Laat ze
-   staan tot je de huisstijl van de klant hebt.
-
-   Werkwijze:
-   1. Vervang de hex-waarden in "Palette" door die van de klant. Houd de
-      tokennamen (--moss-800, --gold-500...) ongewijzigd, of hernoem ze
-      overal consequent — ze worden door de andere CSS-bestanden gebruikt.
-   2. De semantische tokens eronder (--bg, --text, --accent, --brand...)
-      wijzen naar het palet. Meestal hoef je daar niets te veranderen:
-      pas het palet aan en de hele site volgt.
-   3. Fonts: --font-display en --font-body. Wijzig je die, pas dan ook de
-      Google Fonts-link in de head van elke HTML-pagina aan.
-   4. Controleer het contrast na het wisselen (minimaal 4.5:1 voor
-      lopende tekst) — een donker merkkleur op een lichte achtergrond
-      gaat meestal goed, de omgekeerde combinatie zelden.
+   Huisstijl Calor: donker, warm Spaans interieur — bordeaux/wijnrood als
+   basis, zand/crème voor kaarten en tekst, goud als accent, felroze/neon
+   voor de "Viva el Calor"-sfeer. Type: Playfair Display (kop) + Montserrat
+   (body) + Monoton (neon-opschrift).
    ========================================================================== */
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
   /* — Palette — */
-  --moss-950: #1c2419;
-  --moss-900: #242f1f;
-  --moss-800: #33422e;
-  --moss-700: #445642;
-  --gold-600: #a8721f;
-  --gold-500: #c98a34;
-  --gold-400: #dba456;
-  --wine-700: #5f2424;
-  --wine-600: #7a2e2e;
-  --linen-50:  #faf8f2;
-  --linen-100: #f3efe3;
-  --linen-200: #eae3d3;
-  --linen-300: #ded4bd;
-  --sage-400: #a9af9a;
-  --sage-300: #c2c7b3;
-  --ink-900: #1a1712;
-  --ink-800: #221f1a;
-  --ink-600: #4a453c;
-  --ink-400: #79746a;
+  --wine-950:    #1e0909;
+  --wine-900:    #2A0E0E;
+  --wine-800:    #3D1414;
+  --wine-700:    #4A1A1A;
+  --wine-card:   #5B1C2B;
+  --wine-card-d: #431320;
+  --gold-600:    #d9b562;
+  --gold-500:    #F1D68A;
+  --sand-600:    #d8b986;
+  --sand-500:    #EBCFA0;
+  --sand-400:    #F3E0BC;
+  --rose-500:    #FF3D78;
+  --cream-050:   #FDF5E6;
+  --muted-400:   #B8A89A;
 
-  --bg: var(--linen-100);
-  --surface: var(--linen-50);
-  --surface-subtle: var(--linen-200);
-  --surface-raised: #ffffff;
-  --text: var(--ink-800);
-  --text-muted: var(--ink-600);
-  --border: var(--linen-300);
+  --bg: var(--wine-800);
+  --surface: var(--wine-card);
+  --surface-subtle: var(--wine-card-d);
+  --surface-raised: var(--wine-700);
+  --text: var(--muted-400);
+  --text-muted: var(--muted-400);
+  --border: rgba(235, 207, 160, 0.14);
   --accent: var(--gold-500);
-  /* Iets dieper dan --gold-600: op de lichte achtergronden (linen/wit) waar
-     dit voor kleine tekst en links gebruikt wordt, haalt --gold-600 zelf maar
-     3.6:1 contrast — net onder de WCAG AA-norm (4.5:1) voor gewone tekst.
-     Deze tint haalt overal ≥4.5:1, zonder merkbaar minder "goud" te ogen. */
-  --accent-ink: #8f611a;
-  --brand: var(--moss-800);
+  --accent-ink: var(--gold-500);
+  --brand: var(--rose-500);
 
-  /* — Rollen op een donkere ondergrond (header/footer/page-header/info-card) —
-     Hieronder verandert normaal NIETS per klant: je past enkel het palet
-     hierboven aan, en deze rollen volgen automatisch mee. — */
-  --inverse-bg: var(--moss-900);
-  --inverse-bg-strong: var(--moss-950);
-  --inverse-text: var(--linen-50);
-  --inverse-text-emphasis: var(--linen-100);
-  --inverse-text-muted: var(--sage-300);
-  --inverse-text-soft: var(--sage-400);
-  --inverse-text-dim: rgba(250, 248, 242, 0.6);
-  --inverse-text-bright: rgba(250, 248, 242, 0.82);
-  --accent-inverse: var(--gold-400);
+  /* — Rollen op de diepste ondergrond (header/footer/page-header/info-card) — */
+  --inverse-bg: var(--wine-900);
+  --inverse-bg-strong: var(--wine-950);
+  --inverse-text: var(--cream-050);
+  --inverse-text-emphasis: var(--cream-050);
+  --inverse-text-muted: var(--sand-500);
+  --inverse-text-soft: var(--muted-400);
+  --inverse-text-dim: rgba(253, 245, 230, 0.6);
+  --inverse-text-bright: rgba(253, 245, 230, 0.85);
+  --accent-inverse: var(--gold-500);
 
-  /* — Extra tekst-/decoratierol op een lichte ondergrond — */
-  --text-strong: var(--ink-900);
-  --muted-accent: var(--sage-400);
+  /* — Extra tekst-/decoratierol — */
+  --text-strong: var(--cream-050);
+  --muted-accent: var(--sand-500);
 
   /* — Status (formulier- en meldingsfeedback) — */
-  --success: var(--moss-700);
-  --success-strong: var(--moss-900);
-  --success-veil: rgba(51, 66, 46, 0.08);
-  --danger: var(--wine-600);
-  --danger-strong: var(--wine-700);
-  --danger-veil: rgba(122, 46, 46, 0.07);
-  --danger-veil-soft: rgba(122, 46, 46, 0.05);
-  --danger-ring: rgba(122, 46, 46, 0.35);
+  --success: #6f8f5c;
+  --success-strong: #8fae7a;
+  --success-veil: rgba(111, 143, 92, 0.14);
+  --danger: var(--rose-500);
+  --danger-strong: #ff6d97;
+  --danger-veil: rgba(255, 61, 120, 0.12);
+  --danger-veil-soft: rgba(255, 61, 120, 0.07);
+  --danger-ring: rgba(255, 61, 120, 0.35);
 
-  /* — Doorschijnende laagjes op de --inverse-bg (nav-blur, randjes, hover) — */
-  --inverse-veil-nav: rgba(250, 248, 242, 0.78);
-  --inverse-border-soft: rgba(250, 248, 242, 0.4);
-  --inverse-underline: rgba(250, 248, 242, 0.35);
-  --inverse-hover: rgba(250, 248, 242, 0.1);
-  --inverse-hairline: rgba(250, 248, 242, 0.12);
-  --hairline: rgba(30, 27, 20, 0.08);
+  /* — Doorschijnende laagjes op de donkere ondergrond (nav-blur, randjes, hover) — */
+  --inverse-veil-nav: rgba(42, 14, 14, 0.94);
+  --inverse-border-soft: rgba(235, 207, 160, 0.4);
+  --inverse-underline: rgba(235, 207, 160, 0.35);
+  --inverse-hover: rgba(235, 207, 160, 0.1);
+  --inverse-hairline: rgba(235, 207, 160, 0.13);
+  --hairline: rgba(235, 207, 160, 0.13);
 
-  /* — Decoratieve gloed/schaduw rond de accentkleur (CTA-knop, hero) — */
-  --accent-veil: rgba(201, 138, 52, 0.28);
-  --accent-veil-strong: rgba(201, 138, 52, 0.5);
-  --accent-shadow: rgba(169, 114, 31, 0.55);
-  --accent-shadow-strong: rgba(169, 114, 31, 0.6);
-  --accent-ring: rgba(169, 114, 31, 0.35);
-  --brand-veil: rgba(68, 86, 66, 0.55);
-  --sheen: rgba(255, 255, 255, 0.6);
+  /* — Decoratieve gloed/schaduw rond de accentkleur — */
+  --accent-veil: rgba(241, 214, 138, 0.28);
+  --accent-veil-strong: rgba(255, 61, 120, 0.5);
+  --accent-shadow: rgba(0, 0, 0, 0.45);
+  --accent-shadow-strong: rgba(0, 0, 0, 0.55);
+  --accent-ring: rgba(241, 214, 138, 0.35);
+  --brand-veil: rgba(255, 61, 120, 0.4);
+  --sheen: rgba(255, 255, 255, 0.35);
 
   /* — Type scale — */
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-neon: "Monoton", "Playfair Display", cursive;
 
-  --fs-eyebrow: 0.8125rem;
+  --fs-eyebrow: 0.6875rem;
   --fs-small: 0.9375rem;
-  --fs-body: 1.0625rem;
-  --fs-lead: 1.25rem;
+  --fs-body: 0.9375rem;
+  --fs-lead: 1.0625rem;
   --fs-h3: clamp(1.375rem, 1.1rem + 1.1vw, 1.75rem);
-  --fs-h2: clamp(2rem, 1.5rem + 2.2vw, 3rem);
+  --fs-h2: clamp(2rem, 1.5rem + 2.2vw, 3.4rem);
   --fs-h1: clamp(2.75rem, 1.9rem + 3.8vw, 4.75rem);
 
   /* — Spacing scale — */
@@ -131,17 +106,22 @@
   --sp-9: 6.5rem;
   --sp-10: 9rem;
 
-  --radius-sm: 10px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
-  --shadow-soft: 0 20px 50px -25px rgba(26, 23, 18, 0.35);
-  --shadow-lift: 0 28px 60px -20px rgba(26, 23, 18, 0.4);
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 20px 50px -25px rgba(20, 6, 6, 0.55);
+  --shadow-lift: 0 28px 60px -20px rgba(20, 6, 6, 0.6);
+  --ease: cubic-bezier(0.22, 0.8, 0.28, 1);
+
+  --maxw: 1240px;
+  --gut: clamp(20px, 5vw, 64px);
+  --sec: clamp(72px, 9vw, 132px);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   margin: 0;
@@ -149,18 +129,23 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   font-size: var(--fs-body);
-  line-height: 1.6;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img { max-width: 100%; display: block; }
-a { color: inherit; }
-h1, h2, h3 {
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--ink-900);
+  color: var(--cream-050);
   margin: 0;
   text-wrap: balance;
-  font-weight: 600;
+  font-weight: 500;
+  line-height: 1.2;
 }
-p { margin: 0; }
+p { margin: 0 0 1.1em; }
+p:last-child { margin-bottom: 0; }
 ul { margin: 0; padding: 0; list-style: none; }
 section { scroll-margin-top: 5.5rem; }

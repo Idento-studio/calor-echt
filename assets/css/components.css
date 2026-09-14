@@ -175,7 +175,8 @@
 }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); }
 @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
-.field { display: flex; flex-direction: column; gap: 0.4rem; margin-top: var(--sp-4); }
+.field { display: flex; flex-direction: column; gap: 0.4rem; margin-top: var(--sp-4); min-width: 0; }
+.field input, .field textarea { width: 100%; }
 .field label {
   font-size: var(--fs-eyebrow);
   font-weight: 600;

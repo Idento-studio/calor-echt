@@ -105,16 +105,43 @@
 
 
 /* — Merkfooter (.ftr) — gebruikt op home, La Carta, La Barra. — */
-.ftr { background: var(--wine-900); padding-block: 56px; border-top: 1px solid var(--sand-dim); }
-.ftr__in { display: flex; flex-wrap: wrap; gap: 26px 40px; align-items: center; justify-content: space-between; }
-.ftr img { width: 118px; }
-.ftr__links { display: flex; flex-wrap: wrap; gap: 22px; }
-.ftr__links a { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--sand-500); opacity: 0.8; }
-.ftr__links a:hover { color: var(--gold-500); opacity: 1; }
-.ftr__links a[aria-current="page"] { color: var(--gold-500); opacity: 1; }
-.ftr__copy { font-size: 12px; color: var(--muted-400); opacity: 0.7; width: 100%; padding-top: 24px; border-top: 1px solid var(--hairline-soft); margin-top: 8px; }
+.ftr { background: var(--wine-900); padding-block: clamp(56px, 8vw, 96px) 32px; border-top: 1px solid var(--sand-dim); }
+.ftr__grid { display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: clamp(32px, 5vw, 64px); }
+.ftr__brand img { width: 130px; }
+.ftr__tagline { margin-top: 16px; max-width: 32ch; color: var(--sand-500); font-size: 13.5px; line-height: 1.7; }
+.ftr__social { margin-top: 18px; }
+.ftr__social a { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--sand-500); }
+.ftr__social a:hover { color: var(--gold-500); }
+
+.ftr__title {
+  font-family: var(--font-body); font-size: 10.5px; font-weight: 700;
+  letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold-500); margin: 0 0 18px;
+}
+.ftr__nav { display: flex; flex-direction: column; gap: 12px; }
+.ftr__nav a, .ftr__contact a, .ftr__contact p { font-size: 13.5px; color: var(--sand-500); line-height: 1.7; }
+.ftr__nav a:hover, .ftr__contact a:hover { color: var(--gold-500); }
+.ftr__nav a[aria-current="page"] { color: var(--gold-500); }
+.ftr__contact { display: grid; gap: 8px; }
+
+.ftr__bottom {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: 24px;
+  border-top: 1px solid var(--hairline-soft);
+  display: flex; flex-wrap: wrap; gap: 10px 24px;
+  align-items: center; justify-content: space-between;
+  font-size: 12px; color: var(--muted-400);
+}
+.ftr__bottom a { color: var(--muted-400); }
+.ftr__bottom a:hover { color: var(--gold-500); }
+.ftr__legal { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+
+@media (max-width: 900px) {
+  .ftr__grid { grid-template-columns: 1fr 1fr; }
+  .ftr__brand { grid-column: 1 / -1; }
+}
 @media (max-width: 680px) {
-  .ftr__in { flex-direction: column; align-items: flex-start; }
+  .ftr__grid { grid-template-columns: 1fr; gap: 32px; }
+  .ftr__bottom { flex-direction: column; align-items: flex-start; }
 }
 
 

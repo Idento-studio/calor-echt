@@ -41,8 +41,7 @@
   width: 44px;
   height: 1px;
   background: currentColor;
-  align-self: flex-end;
-  margin-bottom: 0.45em;
+  align-self: center;
   transition: width 0.35s var(--ease);
 }
 .btn:hover { color: var(--cream-050); }

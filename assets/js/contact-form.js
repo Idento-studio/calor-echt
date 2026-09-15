@@ -51,7 +51,6 @@
     },
     bericht: function (v, input) {
       if (!v) return input.hasAttribute('required') ? 'Schrijf hier je vraag of bericht.' : null;
-      if (v.length < 10) return 'Vertel iets meer, dan kunnen we je beter helpen.';
       return null;
     },
     datum: function (v) {

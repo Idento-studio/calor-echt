@@ -3,16 +3,16 @@
    [data-ajax-form] attribuut op deze site (het reserveringsformulier op de
    homepage én het contactformulier op /contact/ delen deze logica).
 
-   ┌─ HIER STEL JE IN WAAR FORMULIEREN NAARTOE GAAN ───────────────────────┐
-   │ ENDPOINT leeg laten  → de mailclient van de bezoeker opent met een    │
-   │                        volledig ingevuld bericht. Werkt vandaag, en   │
-   │                        vereist geen account of server.                │
-   │ ENDPOINT invullen    → het bericht wordt op de achtergrond verstuurd  │
-   │                        en de bezoeker blijft op de pagina. Zet hier   │
-   │                        je Formspree-, Web3Forms- of Netlify-URL.      │
-   │                        (Formspree: maak gratis een account op         │
-   │                        formspree.io, koppel het e-mailadres van de    │
-   │                        zaak, en plak de endpoint-URL hieronder.)      │
+   ┌─ WAAR FORMULIEREN NAARTOE GAAN ────────────────────────────────────────┐
+   │ ENDPOINT staat op het Formspree-formulier van Calor. Het bericht      │
+   │ wordt op de achtergrond verstuurd (fetch), de bezoeker blijft op de   │
+   │ pagina, en Formspree stuurt een meldingsmail naar het adres dat in    │
+   │ het Formspree-dashboard is ingesteld. Omdat het e-mailveld hier       │
+   │ letterlijk "email" heet, zet Formspree dat automatisch als Reply-To   │
+   │ op die meldingsmail — antwoorden gaat dus rechtstreeks naar de klant. │
+   │ ENDPOINT leeg maken  → valt terug op de mailclient van de bezoeker    │
+   │                        (geen account/server nodig, maar geen eigen    │
+   │                        opmaak en de bezoeker moet zelf verzenden).    │
    └──────────────────────────────────────────────────────────────────────┘
 
    Zonder JavaScript blijft het contactformulier werken via de gewone HTML-
@@ -23,7 +23,7 @@
 (function () {
   'use strict';
 
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://formspree.io/f/mqpkrojk';
   var MAIL_TO = 'info@calor-echt.nl';
 
   var forms = document.querySelectorAll('[data-ajax-form]');
@@ -168,10 +168,15 @@
 
     function sendByEndpoint(v) {
       busy(true);
+      // _subject is een Formspree-conventie: geeft het meldingsmailtje een
+      // duidelijk onderwerp i.p.v. de generieke standaardtekst.
+      var payload = {};
+      Object.keys(v).forEach(function (k) { payload[k] = v[k]; });
+      payload._subject = 'Nieuw bericht via de website' + (v.naam ? ' — ' + v.naam : '');
       fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(v)
+        body: JSON.stringify(payload)
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         form.reset();

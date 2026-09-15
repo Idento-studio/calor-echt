@@ -168,11 +168,16 @@
 
     function sendByEndpoint(v) {
       busy(true);
-      // _subject is een Formspree-conventie: geeft het meldingsmailtje een
-      // duidelijk onderwerp i.p.v. de generieke standaardtekst.
+      // _subject en _cc zijn Formspree-conventies: een duidelijk onderwerp
+      // i.p.v. de generieke standaardtekst, en een kopie voor Idento. Let
+      // op: Formspree kent geen echte _bcc — _cc is het dichtste alternatief
+      // (de klant krijgt deze meldingsmail zelf nooit te zien, dus in de
+      // praktijk blijft het onzichtbaar voor hen; enkel Calor zelf zou de
+      // Cc-regel kunnen zien als ze de headers bekijken).
       var payload = {};
       Object.keys(v).forEach(function (k) { payload[k] = v[k]; });
       payload._subject = 'Nieuw bericht via de website' + (v.naam ? ' — ' + v.naam : '');
+      payload._cc = 'jens@idento.be';
       fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
@@ -180,6 +185,10 @@
       }).then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         form.reset();
+        // Is er een bedankpagina gekoppeld (data-thanks-url), stuur de
+        // bezoeker daarheen i.p.v. enkel een melding op de pagina te tonen.
+        var thanksUrl = form.getAttribute('data-thanks-url');
+        if (thanksUrl) { window.location.href = thanksUrl; return; }
         var firstName = (v.naam || '').split(' ')[0].replace(/[<>&]/g, '') || 'Bedankt';
         setStatus('success',
           '<strong>Bedankt' + (v.naam ? ', ' + firstName : '') + '.</strong> ' +

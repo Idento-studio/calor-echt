@@ -1,318 +1,91 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Calor — Lunch &amp; Bar in Echt | Spaanse tapas, bites &amp; cocktails</title>
-<meta name="description" content="Calor Lunch &amp; Bar in Echt: Spaanse tapas, bocadillos, bites en signature cocktails. Bovenstestraat 4, Echt. Reserveer een tafel of wandel gewoon binnen.">
-<meta name="robots" content="index, follow">
+<title>Calor — Lunch &amp; Bar in Echt | Binnenkort open</title>
+<meta name="description" content="Calor Lunch &amp; Bar in Echt opent binnenkort de deuren. Spaanse tapas, bites en signature cocktails. Bovenstestraat 4, Echt.">
+<meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://calor-echt.nl/">
 <meta name="theme-color" content="#3D1414">
 
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn...) -->
-<meta property="og:type" content="restaurant">
-<meta property="og:site_name" content="Calor Lunch &amp; Bar">
-<meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="Calor — Lunch &amp; Bar in Echt">
-<meta property="og:description" content="De ziel van Spanje, gevangen in een glas en geserveerd op een plankje.">
-<meta property="og:url" content="https://calor-echt.nl/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calor — Lunch &amp; Bar in Echt | Binnenkort open">
+<meta property="og:description" content="De ziel van Spanje, gevangen in een glas en geserveerd op een plankje. Binnenkort open in Echt.">
 <meta property="og:image" content="https://calor-echt.nl/assets/img/hero-interior.jpg">
+<meta property="og:locale" content="nl_NL">
 
-<!-- Twitter/X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Calor — Lunch &amp; Bar in Echt">
-<meta name="twitter:description" content="De ziel van Spanje, gevangen in een glas en geserveerd op een plankje.">
-<meta name="twitter:image" content="https://calor-echt.nl/assets/img/hero-interior.jpg">
-
-<!-- Favicons -->
 <link rel="icon" href="assets/img/cropped-Favicon-1.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/img/cropped-Favicon-1.png">
 <link rel="manifest" href="site.webmanifest">
 
-<!-- Fonts: preconnect + non-blocking load (print-media trick), met noscript-fallback -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&family=Monoton&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&family=Monoton&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&family=Monoton&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Volgorde is belangrijk: brand → layout → components → pagina -->
-<link rel="stylesheet" href="assets/css/brand.css">
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/pages/home.css">
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Restaurant",
-  "name":"Calor Lunch & Bar",
-  "servesCuisine":["Spaans","Tapas","Lunch"],
-  "url":"https://calor-echt.nl/",
-  "email":"info@calor-echt.nl",
-  "image":"https://calor-echt.nl/assets/img/hero-interior.jpg",
-  "priceRange":"€€",
-  "address":{"@type":"PostalAddress","streetAddress":"Bovenstestraat 4","postalCode":"6101 EK","addressLocality":"Echt","addressCountry":"NL"},
-  "openingHoursSpecification":[
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday"],"opens":"17:00","closes":"24:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"17:00","closes":"01:00"},
-    {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday"],"opens":"15:00","closes":"22:00"}
-  ],
-  "sameAs":["https://www.instagram.com/calor.echt/"]
+<style>
+:root{
+  --wine:#3D1414; --wine-deep:#2A0E0E;
+  --gold:#F1D68A; --sand:#EBCFA0; --cream:#FDF5E6; --muted:#B8A89A; --rose:#FF3D78;
+  --serif:"Playfair Display", Georgia, serif;
+  --sans:"Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-</script>
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; min-height:100svh; background:var(--wine); color:var(--sand);
+  font-family:var(--sans); font-size:15px; line-height:1.85; letter-spacing:.01em;
+  display:grid; place-items:center; text-align:center; overflow-x:hidden;
+}
+img{max-width:100%}
+a{color:inherit}
+
+.wrap{position:relative; min-height:100svh; width:100%; display:grid; place-items:center; padding:clamp(32px,6vw,64px) 20px;}
+.bg{position:absolute; inset:0; background:url("assets/img/hero-interior.jpg") center bottom/cover no-repeat; transform:scale(1.06);}
+.bg::after{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(120% 78% at 50% 42%, rgba(61,20,20,.5) 0%, rgba(42,14,14,.88) 62%, rgba(30,9,9,.97) 100%),
+    linear-gradient(180deg, rgba(42,14,14,.85) 0%, transparent 30%, transparent 65%, var(--wine) 100%);
+}
+.in{position:relative; z-index:2; max-width:640px;}
+
+.eyebrow{
+  font-size:11px; font-weight:600; letter-spacing:.5em; text-transform:uppercase;
+  color:var(--sand); opacity:.9; margin:0 0 clamp(18px,3vw,28px);
+}
+.logo{width:min(100%,420px); height:auto; margin:0 auto; filter:drop-shadow(0 0 46px rgba(241,214,138,.28));}
+.tag{
+  font-family:var(--serif); font-style:italic; font-weight:600;
+  font-size:clamp(1.5rem,4vw,2.2rem); color:var(--rose);
+  margin:clamp(18px,3vw,26px) 0 clamp(20px,3vw,28px);
+  text-shadow:0 0 26px rgba(255,61,120,.55), 0 0 60px rgba(255,61,120,.3);
+}
+.copy{max-width:42ch; margin:0 auto clamp(28px,4vw,40px); color:var(--sand); opacity:.92;}
+.contact{display:flex; flex-wrap:wrap; gap:14px 34px; justify-content:center; font-size:13px; letter-spacing:.08em;}
+.contact a{text-decoration:none; border-bottom:1px solid rgba(235,207,160,.4); padding-bottom:2px; transition:color .25s,border-color .25s;}
+.contact a:hover{color:var(--gold); border-color:var(--gold);}
+.foot{position:relative; z-index:2; margin-top:clamp(40px,6vw,64px); font-size:11px; letter-spacing:.1em; color:var(--muted); opacity:.75;}
+
+@media (prefers-reduced-motion:reduce){ *{transition:none!important;} }
+</style>
 </head>
 <body>
 
-<a class="skip-link" href="#main">Ga naar de inhoud</a>
-
-<!-- ========== HEADER ========== -->
-<header class="hdr" id="hdr">
-  <div class="wrap hdr__in">
-    <a class="hdr__logo" href="#top" aria-label="Calor — naar boven">
-      <img src="assets/img/Calor-text-logo-yellow.png" alt="Calor Lunch &amp; Bar" width="132" height="35">
-    </a>
-
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu openen">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="hdr-nav" id="nav">
-      <a href="la-carta/">La Carta</a>
-      <a href="la-barra/">La Barra</a>
-      <a href="sfeer/">Sfeer</a>
-      <a href="contact/">Contact</a>
-      <a class="btn" href="reserveren/">Reserveer</a>
-    </nav>
+<div class="wrap">
+  <div class="bg" aria-hidden="true"></div>
+  <div class="in">
+    <p class="eyebrow">Binnenkort open</p>
+    <img class="logo" src="assets/img/Calor-text-logo-yellow-1024x268.png" alt="Calor Lunch &amp; Bar" width="1024" height="268">
+    <p class="tag">Lunch &amp; Bar</p>
+    <p class="copy">We zijn volop aan het bouwen aan iets moois. Binnenkort verwelkomen we jullie in Echt met Spaanse tapas, bites en signature cocktails.</p>
+    <div class="contact">
+      <a href="mailto:info@calor-echt.nl">info@calor-echt.nl</a>
+      <a href="https://www.instagram.com/calor.echt/" target="_blank" rel="noopener">@calor.echt</a>
+    </div>
+    <p class="foot">Bovenstestraat 4, 6101 EK Echt</p>
   </div>
-</header>
+</div>
 
-<main id="main">
-
-<!-- ========== HERO ========== -->
-<section class="hero" id="top">
-  <div class="hero__bg" aria-hidden="true"></div>
-  <div class="hero__in">
-    <p class="hero__eyebrow">Siente el</p>
-    <h1 class="sr-only">Calor — Lunch &amp; Bar in Echt</h1>
-    <img class="hero__logo" src="assets/img/Calor-text-logo-yellow-1024x268.png" alt="Calor" width="1024" height="268" fetchpriority="high">
-    <p class="hero__sub">Lunch &amp; Bar</p>
-    <p class="hero__tag">De ziel van Spanje, gevangen in een glas en geserveerd op een plankje.</p>
-    <div class="hero__cta">
-      <a class="btn" href="reserveren/">Reserveer een tafel</a>
-      <a class="btn btn--muted" href="la-carta/">Bekijk onze kaart</a>
-    </div>
-  </div>
-  <div class="hero__scroll" aria-hidden="true">Scroll<span></span></div>
-</section>
-
-<!-- ========== LA EXPERIENCIA ========== -->
-<section class="sec">
-  <div class="wrap split">
-    <div class="split__txt reveal">
-      <p class="eyebrow">La Experiencia</p>
-      <h2 class="stitle">Zinderend Spaans,<br><em>modern geserveerd.</em></h2>
-      <p>Wij geloven dat eten meer is dan alleen maar voeding, het is beleving. In Calor combineren we authentieke Spaanse recepten met moderne technieken en lokale seizoensingrediënten. Elke hap een reis naar het zuiden.</p>
-      <a class="btn" href="la-carta/">Ontdek onze kaart</a>
-    </div>
-    <div class="framed reveal">
-      <img src="assets/img/hero-interior-1.jpg" alt="Het warme, sfeervolle interieur van Calor in Echt" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ========== LA CARTA ========== -->
-<section class="sec sec--card" id="la-carta">
-  <div class="botanic" aria-hidden="true" id="botanic"></div>
-  <div class="wrap">
-    <div class="carta__head reveal">
-      <p class="eyebrow eyebrow--sand">La Carta</p>
-      <h2 class="stitle">Tapas <span class="amp">&amp;</span> Raciones</h2>
-      <p style="margin-top:18px">Gedeeld eten is dubbel genieten. Geef door, deel mee en bestel nog wat. Zo doen we dat bij Calor!</p>
-      <p class="carta-categories">Bocadillos · Platos Calientes · Ensaladas · Para Tomar Algo · Niños · Pasteles</p>
-    </div>
-
-    <div class="menu carta-highlights reveal">
-      <article class="item"><h4 class="item__name">Calor</h4><span class="item__price">€9</span><p class="item__desc">Crispy Jamón Serrano, mozzarella, rucola, parmezaanse kaas, avocado, tomaat en balsamicodressing</p></article>
-      <article class="item"><h4 class="item__name">Twaalf uurtje</h4><span class="item__price">€11</span><p class="item__desc">Soep, desembrood, een kroket naar keuze, een gebakken ei en een frisse salade</p></article>
-      <article class="item"><h4 class="item__name">Loaded nacho's</h4><span class="item__price">€11</span><p class="item__desc">Tortillachips met gemarineerde kippendij, kaas, jalapeño en bosui, geserveerd met salsa, guacamole en zure room</p></article>
-      <article class="item"><h4 class="item__name">Huisgemaakte cheesecake</h4><span class="item__price">€11</span><p class="item__desc">Romige huisgemaakte cheesecake met krokante bodem en vers fruit</p></article>
-    </div>
-
-    <p class="reveal" style="text-align:center;margin-top:clamp(34px,5vw,52px)">
-      <a class="btn" href="la-carta/">Bekijk de volledige kaart</a>
-    </p>
-  </div>
-</section>
-
-<!-- ========== AANBEVOLEN / TABLA DE BEBIDAS ========== -->
-<section class="sec" style="padding-block:0">
-  <div class="feature">
-    <div class="feature__img" role="img" aria-label="Een tafel vol Spaanse tapas bij Calor" style="background-image:url('assets/img/tapas-spread.jpg')"></div>
-    <div class="feature__box reveal">
-      <p class="eyebrow">Aanbevolen</p>
-      <h3 class="stitle" style="font-size:clamp(1.8rem,3.4vw,2.6rem)">Tabla de Bebidas</h3>
-      <p class="feature__price">€11 per persoon — vanaf 2 personen</p>
-      <p>Laat ons kiezen. Een plank vol met alles wat vandaag het lekkerst is uit de keuken, voor de hele tafel. Nederlands of Spaans, jullie zeggen het maar.</p>
-
-      <div style="margin-top:16px">
-        <div class="plank">
-          <h4>Nederlands</h4><span class="item__price">€11</span>
-          <p>Vanaf 2 personen. Hollandse klassiekers: bitterballen, kaas, worst en de dips die erbij horen.</p>
-        </div>
-        <div class="plank">
-          <h4>Spaans</h4><span class="item__price">€11</span>
-          <p>Vanaf 2 personen. Jamón serrano, chorizo, manchego, olijven en vers desembrood met aioli.</p>
-        </div>
-      </div>
-
-      <a class="btn" style="margin-top:28px" href="reserveren/">Reserveer je tafel</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== NEON QUOTE ========== -->
-<section class="neon">
-  <div class="wrap">
-    <h2>VIVA EL CALOR</h2>
-    <p>&ldquo;La vida es corta y los tapas son pequeños, ¡pide otro plato!&rdquo;</p>
-  </div>
-</section>
-
-<!-- ========== LA BARRA ========== -->
-<section class="sec" id="la-barra">
-  <div class="wrap barra">
-    <div class="framed reveal">
-      <img src="assets/img/cocktails.jpg" alt="Signature cocktails aan de bar van Calor" loading="lazy">
-    </div>
-    <div class="reveal">
-      <p class="eyebrow">La Barra</p>
-      <h2 class="stitle">Cócteles <br><em>&amp; copas</em></h2>
-      <p style="margin-top:22px;max-width:46ch">Onze barmannen zetten klassiekers om in iets eigens. Van signature cocktails tot Spaanse spritz en alcoholvrije mocktails.</p>
-
-      <div class="menu barra__list" style="grid-template-columns:1fr">
-        <article class="item"><h4 class="item__name">Mojito</h4><span class="item__price">€9</span><p class="item__desc">Witte rum · verse munt · limoen · bruiswater</p></article>
-        <article class="item"><h4 class="item__name">Aperol</h4><span class="item__price">€9</span><p class="item__desc">Sinaasappeltonen · bitters · bruisende prosecco</p></article>
-        <article class="item"><h4 class="item__name">Espresso Martini</h4><span class="item__price">€9</span><p class="item__desc">Vodka · verse espresso · koffielikeur</p></article>
-      </div>
-
-      <a class="btn" style="margin-top:32px" href="la-barra/">Ontdek onze drankjes</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========== EL AMBIENTE ========== -->
-<section class="sec sec--deep" id="sfeer">
-  <div class="wrap">
-    <div class="carta__head reveal" style="margin-bottom:0">
-      <p class="eyebrow">El Ambiente</p>
-      <h2 class="stitle">Gezelligheid <em>troef</em></h2>
-    </div>
-    <div class="gallery reveal">
-      <figure class="g1"><img src="assets/img/bartender.jpg" alt="Barman aan het werk bij Calor" loading="lazy"></figure>
-      <figure class="g2"><img src="assets/img/cocktails.jpg" alt="Cocktails onder het neonlicht" loading="lazy"></figure>
-      <figure class="g3"><img src="assets/img/neon-viva.jpg" alt="Neonbord Viva el Calor" loading="lazy"></figure>
-    </div>
-    <p class="gallery-teaser-cta reveal">
-      <a class="btn" href="sfeer/">Bekijk de volledige galerij</a>
-    </p>
-  </div>
-</section>
-
-<!-- ========== BEZOEK ========== -->
-<section class="sec sec--card" id="bezoek">
-  <div class="botanic" aria-hidden="true"></div>
-  <div class="wrap visit">
-    <div class="reveal">
-      <p class="eyebrow">Abierto · Welkom</p>
-      <h2 class="stitle">Kom <em>langs</em></h2>
-      <p style="margin-top:22px;max-width:44ch">Reserveren is fijn, binnenwandelen mag altijd. We houden een hoekje vrij voor wie spontaan zin krijgt in een glas cava.</p>
-
-      <div class="info">
-        <div>
-          <h3>Adres</h3>
-          <p><a href="https://maps.google.com/?q=Bovenstestraat+4,+6101+EK+Echt" target="_blank" rel="noopener">Bovenstestraat 4<br>6101 EK Echt</a></p>
-        </div>
-        <div>
-          <h3>Openingstijden</h3>
-          <div class="hours">
-            <div><span>Di – Do</span><span>17:00 – 24:00</span></div>
-            <div><span>Vr – Za</span><span>17:00 – 01:00</span></div>
-            <div><span>Zo</span><span>15:00 – 22:00</span></div>
-            <div><span>Ma</span><span>Gesloten</span></div>
-          </div>
-        </div>
-        <div>
-          <h3>Contact</h3>
-          <p>
-            <a href="mailto:info@calor-echt.nl">info@calor-echt.nl</a><br>
-            <a href="https://www.instagram.com/calor.echt/" target="_blank" rel="noopener">@calor.echt</a>
-          </p>
-        </div>
-      </div>
-
-      <a class="btn btn--sand" style="margin-top:34px" href="reserveren/">Reserveer een tafel</a>
-    </div>
-
-    <div class="map reveal">
-      <iframe title="Calor op de kaart — Bovenstestraat 4, Echt" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps?q=Bovenstestraat%204,%206101%20EK%20Echt&output=embed"></iframe>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ========== FOOTER ========== -->
-<footer class="ftr">
-  <div class="wrap">
-    <div class="ftr__grid">
-      <div class="ftr__brand">
-        <a href="#top" aria-label="Calor — naar boven">
-          <img src="assets/img/Calor-text-logo-yellow.png" alt="Calor Lunch &amp; Bar" width="130" height="34" loading="lazy">
-        </a>
-        <p class="ftr__tagline">De ziel van Spanje, gevangen in een glas en geserveerd op een plankje.</p>
-        <div class="ftr__social">
-          <a href="https://www.instagram.com/calor.echt/" target="_blank" rel="noopener">Instagram</a>
-        </div>
-      </div>
-
-      <div>
-        <h4 class="ftr__title">Menu</h4>
-        <nav class="ftr__nav" aria-label="Footer">
-          <a href="la-carta/">La Carta</a>
-          <a href="la-barra/">La Barra</a>
-          <a href="sfeer/">Sfeer</a>
-          <a href="contact/">Contact</a>
-          <a href="reserveren/">Reserveren</a>
-        </nav>
-      </div>
-
-      <div>
-        <h4 class="ftr__title">Contact</h4>
-        <div class="ftr__contact">
-          <p>Bovenstestraat 4<br>6101 EK Echt</p>
-          <p><a href="mailto:info@calor-echt.nl">info@calor-echt.nl</a></p>
-          <p>Di&ndash;Do 17:00&ndash;24:00<br>Vr&ndash;Za 17:00&ndash;01:00<br>Zo 15:00&ndash;22:00 &middot; Ma gesloten</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="ftr__bottom">
-      <p>&copy; <span id="yr">2026</span> Calor Lunch &amp; Bar &middot; <a href="https://idento.be/" target="_blank" rel="noopener">Webdesign by Idento</a></p>
-      <nav class="ftr__legal" aria-label="Juridisch">
-        <a href="privacy/">Privacybeleid</a>
-        <a href="cookiebeleid/">Cookiebeleid</a>
-        <a href="voorwaarden/">Algemene voorwaarden</a>
-      </nav>
-    </div>
-  </div>
-</footer>
-
-<script src="assets/js/cookie-consent.js" data-privacy-url="privacy/" defer></script>
-<script src="assets/js/analytics.js" defer></script>
-<script src="assets/js/site.js" defer></script>
-<script src="assets/js/site-ui.js" defer></script>
-<script src="https://book.restomanager.net/widget.js" data-base-url="https://book.restomanager.net" data-business-id="6a560065063dec41c209df8c" data-widget-type="floating" data-floating="true"></script>
 </body>
 </html>

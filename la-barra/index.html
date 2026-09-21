@@ -4,8 +4,8 @@
 <script>if (location.pathname !== "/") { location.replace("/"); }</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Barra — cocktails, spritz &amp; mocktails | Calor Lunch &amp; Bar</title>
-<meta name="description" content="De volledige drankkaart van Calor in Echt: signature cocktails, Spaanse spritz en alcoholvrije mocktails.">
+<title>La Barra — cocktails, wijn &amp; drankkaart | Calor Lunch &amp; Bar</title>
+<meta name="description" content="De volledige drankkaart van Calor in Echt: signature cocktails, Spaanse spritz, mocktails, wijn, bier, frisdrank, koffie en sterke dranken.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://calor-echt.nl/la-barra/">
 <meta name="theme-color" content="#3D1414">
@@ -14,15 +14,15 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Calor Lunch &amp; Bar">
 <meta property="og:locale" content="nl_NL">
-<meta property="og:title" content="La Barra — cocktails, spritz &amp; mocktails | Calor Lunch &amp; Bar">
-<meta property="og:description" content="Signature cocktails, Spaanse spritz en alcoholvrije mocktails.">
+<meta property="og:title" content="La Barra — cocktails, wijn &amp; drankkaart | Calor Lunch &amp; Bar">
+<meta property="og:description" content="Signature cocktails, Spaanse spritz, mocktails, wijn, bier, frisdrank, koffie en sterke dranken.">
 <meta property="og:url" content="https://calor-echt.nl/la-barra/">
 <meta property="og:image" content="https://calor-echt.nl/assets/img/cocktails.jpg">
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="La Barra — cocktails, spritz &amp; mocktails | Calor Lunch &amp; Bar">
-<meta name="twitter:description" content="Signature cocktails, Spaanse spritz en alcoholvrije mocktails.">
+<meta name="twitter:title" content="La Barra — cocktails, wijn &amp; drankkaart | Calor Lunch &amp; Bar">
+<meta name="twitter:description" content="Signature cocktails, Spaanse spritz, mocktails, wijn, bier, frisdrank, koffie en sterke dranken.">
 <meta name="twitter:image" content="https://calor-echt.nl/assets/img/cocktails.jpg">
 
 <!-- Favicons -->
@@ -53,7 +53,11 @@
   "hasMenuSection":[
     {"@type":"MenuSection","name":"Cocktails"},
     {"@type":"MenuSection","name":"Spritz"},
-    {"@type":"MenuSection","name":"Mocktails"}
+    {"@type":"MenuSection","name":"Mocktails"},
+    {"@type":"MenuSection","name":"Vino"},
+    {"@type":"MenuSection","name":"Cerveza"},
+    {"@type":"MenuSection","name":"Soft & Café"},
+    {"@type":"MenuSection","name":"Copas"}
   ]
 }
 </script>
@@ -99,6 +103,10 @@
       <button class="tab" role="tab" id="t-cocktails" aria-controls="p-cocktails" aria-selected="true">Cocktails</button>
       <button class="tab" role="tab" id="t-spritz"    aria-controls="p-spritz"    aria-selected="false">Spritz</button>
       <button class="tab" role="tab" id="t-mocktails" aria-controls="p-mocktails" aria-selected="false">Mocktails</button>
+      <button class="tab" role="tab" id="t-vino"      aria-controls="p-vino"      aria-selected="false">Vino</button>
+      <button class="tab" role="tab" id="t-cerveza"   aria-controls="p-cerveza"   aria-selected="false">Cerveza</button>
+      <button class="tab" role="tab" id="t-soft"      aria-controls="p-soft"      aria-selected="false">Soft &amp; Café</button>
+      <button class="tab" role="tab" id="t-copas"     aria-controls="p-copas"     aria-selected="false">Copas</button>
     </div>
 
     <!-- COCKTAILS -->
@@ -106,14 +114,14 @@
       <div class="group">
         <p class="grouplabel">Calor Cocktails</p>
         <div class="menu">
-          <article class="item"><h4 class="item__name">Amaretto Sour</h4><span class="item__price">€9</span><p class="item__desc">Zachte cocktail met amaretto, vers citroensap en een fluweelzachte schuimlaag. Zoet, fris en perfect in balans.</p></article>
-          <article class="item"><h4 class="item__name">Long Island Ice Tea</h4><span class="item__price">€9</span><p class="item__desc">Een beroemde cocktail waarin vodka, gin, rum, tequila en triple sec samenkomen met citroen en cola voor een krachtige, frisse smaakbeleving.</p></article>
-          <article class="item"><h4 class="item__name">Sex on the Beach</h4><span class="item__price">€9</span><p class="item__desc">Tropische cocktail met vodka, perziklikeur, sinaasappel en cranberry. Fruitig, zoet en heerlijk verfrissend.</p></article>
-          <article class="item"><h4 class="item__name">Espresso Martini</h4><span class="item__price">€9</span><p class="item__desc">Een elegante cocktail met vodka, verse espresso en koffielikeur. Krachtig, romig en met een verfijnde koffiesmaak.</p></article>
-          <article class="item"><h4 class="item__name">Moscow Mule</h4><span class="item__price">€9</span><p class="item__desc">Een perfecte mix van vodka, kruidige ginger beer en frisse limoen. Verkwikkend met een pittige afdronk.</p></article>
-          <article class="item"><h4 class="item__name">Pornstar Martini</h4><span class="item__price">€9</span><p class="item__desc">Een tropische cocktail met vodka, passievrucht en vanille, traditioneel geserveerd met een shot prosecco. Fruitig, romig en verleidelijk.</p></article>
-          <article class="item"><h4 class="item__name">Gin Tonic</h4><span class="item__price">€9</span><p class="item__desc">Een verfijnde combinatie van gin en tonic met frisse citrus- en kruidige tonen. Licht bitter en heerlijk verfrissend.</p></article>
-          <article class="item"><h4 class="item__name">Mojito</h4><span class="item__price">€9</span><p class="item__desc">De iconische Cubaanse cocktail met witte rum, verse munt, limoen en bruiswater. Een frisse klassieker met een levendige citrussmaak.</p></article>
+          <article class="item"><h4 class="item__name">Amaretto Sour</h4><span class="item__price">€11</span><p class="item__desc">Zachte cocktail met amaretto, vers citroensap en een fluweelzachte schuimlaag. Zoet, fris en perfect in balans.</p></article>
+          <article class="item"><h4 class="item__name">Long Island Ice Tea</h4><span class="item__price">€13,5</span><p class="item__desc">Een beroemde cocktail waarin vodka, gin, rum, tequila en triple sec samenkomen met citroen en cola voor een krachtige, frisse smaakbeleving.</p></article>
+          <article class="item"><h4 class="item__name">Mojito</h4><span class="item__price">€9,5</span><p class="item__desc">De iconische Cubaanse cocktail met witte rum, verse munt, limoen en bruiswater. Een frisse klassieker met een levendige citrussmaak.</p></article>
+          <article class="item"><h4 class="item__name">Calor</h4><span class="item__price">€13,5</span><p class="item__desc">Een zonnige Spaanse sour met een elegant en zacht karakter. Citrusachtig, fris en heerlijk zomers. Een typisch Calor-karakter.</p></article>
+          <article class="item"><h4 class="item__name">Moscow Mule</h4><span class="item__price">€12</span><p class="item__desc">Een perfecte mix van vodka, kruidige ginger beer en frisse limoen. Verkwikkend met een pittige afdronk.</p></article>
+          <article class="item"><h4 class="item__name">Pornstar Martini</h4><span class="item__price">€12</span><p class="item__desc">Een tropische cocktail met vodka, passievrucht en vanille, traditioneel geserveerd met een shot prosecco. Fruitig, romig en verleidelijk.</p></article>
+          <article class="item"><h4 class="item__name">Gin Tonic</h4><span class="item__price">€11 / €13</span><p class="item__desc">Een verfijnde combinatie van gin en tonic met frisse citrus- en kruidige tonen. Licht bitter en heerlijk verfrissend. €11 met huisgin, €13 met pink gin of Hendrick's gin.</p></article>
+          <article class="item"><h4 class="item__name">Sex on the Beach</h4><span class="item__price">€9,5</span><p class="item__desc">Tropische cocktail met vodka, perziklikeur, sinaasappel- en cranberrysap. Fruitig, zoet en heerlijk verfrissend.</p></article>
         </div>
       </div>
     </div>
@@ -123,10 +131,10 @@
       <div class="group">
         <p class="grouplabel">Calor Spritz</p>
         <div class="menu">
-          <article class="item"><h4 class="item__name">Aperol</h4><span class="item__price">€9</span><p class="item__desc">Een perfecte balans van zoete sinaasappeltonen, subtiele bitters en bruisende prosecco. Zomers en verfrissend.</p></article>
-          <article class="item"><h4 class="item__name">Hugo</h4><span class="item__price">€9</span><p class="item__desc">Een frisse, licht bloemige spritz met prosecco, vlierbloesemsiroop, bruiswater, verse munt en limoen. Perfect als aperitief.</p></article>
-          <article class="item"><h4 class="item__name">Limoncello</h4><span class="item__price">€9</span><p class="item__desc">De smaak van Italiaanse citroenen gecombineerd met prosecco en bruiswater. Lichtzoet, fris en bruisend.</p></article>
-          <article class="item"><h4 class="item__name">Agua de Valencia</h4><span class="item__price">€9</span><p class="item__desc">Een sprankelende Spaanse cocktail met vers sinaasappelsap, cava, gin en vodka. Fris, fruitig en feestelijk.</p></article>
+          <article class="item"><h4 class="item__name">Aperol</h4><span class="item__price">€8,5</span><p class="item__desc">Een perfecte balans van zoete sinaasappeltonen, subtiele bitters en bruisende prosecco. Zomers en verfrissend.</p></article>
+          <article class="item"><h4 class="item__name">Hugo</h4><span class="item__price">€7</span><p class="item__desc">Een frisse, licht bloemige spritz met prosecco, vlierbloesemsiroop, bruiswater, verse munt en limoen. Perfect als aperitief.</p></article>
+          <article class="item"><h4 class="item__name">Limoncello</h4><span class="item__price">€8,5</span><p class="item__desc">De smaak van Italiaanse citroenen gecombineerd met prosecco en bruiswater. Lichtzoet, fris en bruisend.</p></article>
+          <article class="item"><h4 class="item__name">Agua de Valencia</h4><span class="item__price">€8,5</span><p class="item__desc">Een sprankelende Spaanse cocktail met vers sinaasappelsap, cava, gin en vodka. Fris, fruitig en feestelijk.</p></article>
         </div>
       </div>
     </div>
@@ -136,10 +144,175 @@
       <div class="group">
         <p class="grouplabel">Calor Mocktails</p>
         <div class="menu">
-          <article class="item"><h4 class="item__name">Virgin Mojito</h4><span class="item__price">€9</span><p class="item__desc">De alcoholvrije variant van de Cubaanse klassieker, met verse munt, limoen en bruiswater. Een lichte en frisse cocktail voor elk moment.</p></article>
-          <article class="item"><h4 class="item__name">Hugo 0.0</h4><span class="item__price">€9</span><p class="item__desc">Een verfijnde alcoholvrije variant met de frisse smaak van vlierbloesem, munt en limoen. Licht, zomers en verfrissend.</p></article>
+          <article class="item"><h4 class="item__name">Virgin Mojito</h4><span class="item__price">€7,5</span><p class="item__desc">De alcoholvrije variant van de Cubaanse klassieker, met verse munt, limoen en bruiswater. Een lichte en frisse cocktail voor elk moment.</p></article>
+          <article class="item"><h4 class="item__name">Hugo 0.0</h4><span class="item__price">€6,5</span><p class="item__desc">Een verfijnde alcoholvrije variant met de frisse smaak van vlierbloesem, munt en limoen. Licht, zomers en verfrissend.</p></article>
           <article class="item"><h4 class="item__name">Virgin Pornstar</h4><span class="item__price">€9</span><p class="item__desc">Een luxe alcoholvrije mix van exotische passievrucht, romige vanille en frisse citrus. Fruitig, elegant en verfijnd.</p></article>
-          <article class="item"><h4 class="item__name">Tropical Sunrise</h4><span class="item__price">€9</span><p class="item__desc">Een alcoholvrije tropische creatie met frisse citrus, sappige ananas en een kleurrijke grenadine-twist. Een zonnige mocktail voor elk moment.</p></article>
+          <article class="item"><h4 class="item__name">Tropical Sunrise</h4><span class="item__price">€7,5</span><p class="item__desc">Een alcoholvrije tropische creatie met frisse citrus, sappige ananas en een kleurrijke grenadine-twist. Een zonnige mocktail voor elk moment.</p></article>
+        </div>
+      </div>
+    </div>
+
+    <!-- VINO -->
+    <div class="panel reveal" id="p-vino" role="tabpanel" aria-labelledby="t-vino" hidden>
+      <div class="group">
+        <p class="grouplabel">White — glas / fles</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Bomba Sauvignon Blanc</h4><span class="item__price">€5 / €22</span></article>
+          <article class="item"><h4 class="item__name">Timo Vermentino</h4><span class="item__price">€6 / €24</span></article>
+          <article class="item"><h4 class="item__name">Lambrusco Bianco</h4><span class="item__price">€5</span><p class="item__desc">Alleen per glas</p></article>
+          <article class="item"><h4 class="item__name">Naia Verdejo</h4><span class="item__price">€36</span><p class="item__desc">Alleen op fles</p></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Red — glas / fles</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Bomba Tempranillo</h4><span class="item__price">€5 / €22</span></article>
+          <article class="item"><h4 class="item__name">El Castilla Syrah</h4><span class="item__price">€7 / €28</span></article>
+          <article class="item"><h4 class="item__name">Lambrusco Rosso</h4><span class="item__price">€5</span><p class="item__desc">Alleen per glas</p></article>
+          <article class="item"><h4 class="item__name">Coto de Imaz Rioja Reserva</h4><span class="item__price">€39</span><p class="item__desc">Alleen op fles</p></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Rosé &amp; Cava — glas / fles</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Bomba Rosé</h4><span class="item__price">€5 / €22</span></article>
+          <article class="item"><h4 class="item__name">Collombette Rosé</h4><span class="item__price">€6 / €24</span></article>
+          <article class="item"><h4 class="item__name">Cava Pupitre</h4><span class="item__price">€6 / €30</span></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Spaanse Klassiekers — glas / karaf</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Sangria Rood</h4><span class="item__price">€5 / €19</span><p class="item__desc">Fruitig, fris en heerlijk Spaans. Een zonnige mix van rood fruit en citrus, perfect voor een ontspannen moment.</p></article>
+          <article class="item"><h4 class="item__name">Sangria Wit</h4><span class="item__price">€5 / €19</span><p class="item__desc">Fris, fruitig en elegant. Een lichte mix van tropisch fruit en citrus met een heerlijk zomerse twist.</p></article>
+          <article class="item"><h4 class="item__name">Tinto de Verano</h4><span class="item__price">€5 / €19</span><p class="item__desc">Licht, fris en sprankelend. De smaak van Spanje in een glas, heerlijk verfrissend op ieder moment.</p></article>
+          <article class="item"><h4 class="item__name">Agua de Valencia</h4><span class="item__price">€8 / €24</span><p class="item__desc">Fris, fruitig en sprankelend. Een zonnige mix van citrus en sinaasappel met een vleugje Valencia.</p></article>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERVEZA -->
+    <div class="panel reveal" id="p-cerveza" role="tabpanel" aria-labelledby="t-cerveza" hidden>
+      <div class="group">
+        <p class="grouplabel">Tap</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Swinckels</h4><span class="item__price">€3 / €5,8</span><p class="item__desc">0,2L / 0,5L</p></article>
+          <article class="item"><h4 class="item__name">Weihenstephaner</h4><span class="item__price">€5,8 / €7,5</span><p class="item__desc">0,3L / 0,5L</p></article>
+          <article class="item"><h4 class="item__name">Uiltje</h4><span class="item__price">€5</span></article>
+          <article class="item"><h4 class="item__name">La Trappe Blond</h4><span class="item__price">€6,2</span></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Fles &amp; Blik</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Uiltje La Bamba</h4><span class="item__price">€5</span></article>
+          <article class="item"><h4 class="item__name">Uiltje Bird of Prey</h4><span class="item__price">€5</span></article>
+          <article class="item"><h4 class="item__name">Uiltje Wisselblik</h4><span class="item__price">€5</span></article>
+          <article class="item"><h4 class="item__name">Fruitage Rodenbach</h4><span class="item__price">€4,2</span></article>
+          <article class="item"><h4 class="item__name">Cornet</h4><span class="item__price">€6,8</span></article>
+          <article class="item"><h4 class="item__name">Corona</h4><span class="item__price">€4,5</span></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">La Trappe</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">La Trappe Wit</h4><span class="item__price">€5,8</span></article>
+          <article class="item"><h4 class="item__name">La Trappe Dubbel</h4><span class="item__price">€5,8</span></article>
+          <article class="item"><h4 class="item__name">La Trappe Triple</h4><span class="item__price">€6,2</span></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">0.0</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">La Trappe Epos 0.0</h4><span class="item__price">€5,8</span></article>
+          <article class="item"><h4 class="item__name">Swinckels 0.0</h4><span class="item__price">€2,9</span></article>
+          <article class="item"><h4 class="item__name">Bavaria Radler 0.0</h4><span class="item__price">€3,7</span></article>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOFT & CAFÉ -->
+    <div class="panel reveal" id="p-soft" role="tabpanel" aria-labelledby="t-soft" hidden>
+      <div class="group">
+        <p class="grouplabel">Koude dranken</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Coca Cola</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Coca Cola Zero</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Fanta</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Cassis</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Bitter Lemon</h4><span class="item__price">€3,2</span></article>
+          <article class="item"><h4 class="item__name">Tonic</h4><span class="item__price">€3,2</span></article>
+          <article class="item"><h4 class="item__name">Ginger Ale</h4><span class="item__price">€3,2</span></article>
+          <article class="item"><h4 class="item__name">Fuze Tea Sparkling</h4><span class="item__price">€3,5</span></article>
+          <article class="item"><h4 class="item__name">Fuze Tea Green</h4><span class="item__price">€3,5</span></article>
+          <article class="item"><h4 class="item__name">Rivella</h4><span class="item__price">€3,2</span></article>
+          <article class="item"><h4 class="item__name">Sprite</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Chaudfontaine Blauw</h4><span class="item__price">€2,9</span></article>
+          <article class="item"><h4 class="item__name">Chaudfontaine Rood</h4><span class="item__price">€2,9</span></article>
+          <article class="item"><h4 class="item__name">Chaudfontaine Blauw groot</h4><span class="item__price">€6,8</span></article>
+          <article class="item"><h4 class="item__name">Chaudfontaine Rood groot</h4><span class="item__price">€6,8</span></article>
+          <article class="item"><h4 class="item__name">Fristi</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Chocomel</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">IJskoffie</h4><span class="item__price">€5</span></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Warme dranken</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Koffie</h4><span class="item__price">€2,8</span></article>
+          <article class="item"><h4 class="item__name">Cappuccino</h4><span class="item__price">€3,4</span></article>
+          <article class="item"><h4 class="item__name">Latte Macchiato</h4><span class="item__price">€3,8</span></article>
+          <article class="item"><h4 class="item__name">Espresso</h4><span class="item__price">€2,6</span></article>
+          <article class="item"><h4 class="item__name">Dubbele espresso</h4><span class="item__price">€3,8</span></article>
+          <article class="item"><h4 class="item__name">Thee</h4><span class="item__price">€3,1</span></article>
+          <article class="item"><h4 class="item__name">Verse muntthee</h4><span class="item__price">€4,5</span></article>
+          <article class="item"><h4 class="item__name">Verse gemberthee</h4><span class="item__price">€4,5</span></article>
+          <article class="item"><h4 class="item__name">Spanish Coffee</h4><span class="item__price">€8,5</span><p class="item__desc">Koffie met een scheut sterke drank en slagroom</p></article>
+          <article class="item"><h4 class="item__name">Irish Coffee</h4><span class="item__price">€8,5</span><p class="item__desc">Koffie met een scheut sterke drank en slagroom</p></article>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Sappen</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Appelsap troebel</h4><span class="item__price">€3,2</span></article>
+          <article class="item"><h4 class="item__name">Sinaasappelsap</h4><span class="item__price">€3,2</span></article>
+          <article class="item"><h4 class="item__name">Appel gember</h4><span class="item__price">€3,8</span></article>
+          <article class="item"><h4 class="item__name">Appel limoen munt</h4><span class="item__price">€3,8</span></article>
+        </div>
+      </div>
+    </div>
+
+    <!-- COPAS -->
+    <div class="panel reveal" id="p-copas" role="tabpanel" aria-labelledby="t-copas" hidden>
+      <div class="group">
+        <p class="grouplabel">Sterke dranken</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Bacardi</h4><span class="item__price">€5,5</span></article>
+          <article class="item"><h4 class="item__name">Wodka</h4><span class="item__price">€5,5</span></article>
+          <article class="item"><h4 class="item__name">Amaretto</h4><span class="item__price">€5,5</span></article>
+          <article class="item"><h4 class="item__name">Whiskey</h4><span class="item__price">€6</span></article>
+          <article class="item"><h4 class="item__name">Tequila</h4><span class="item__price">€3,5</span></article>
+          <article class="item"><h4 class="item__name">Baileys</h4><span class="item__price">€5,5</span></article>
+          <article class="item"><h4 class="item__name">Sambuca</h4><span class="item__price">€5,5</span></article>
+          <article class="item"><h4 class="item__name">Gin</h4><span class="item__price">€5,5</span></article>
+          <article class="item"><h4 class="item__name">Limoncello</h4><span class="item__price">€5,5</span></article>
+        </div>
+        <p class="menu-note">Alle sterke dranken ook verkrijgbaar als shot — €3,5</p>
+      </div>
+
+      <div class="group">
+        <p class="grouplabel">Perfect to share! — Cubos de cerveza</p>
+        <div class="menu">
+          <article class="item"><h4 class="item__name">Corona — 6 stuks</h4><span class="item__price">€24</span></article>
+          <article class="item"><h4 class="item__name">Mix van Uiltje blikken — 6 stuks</h4><span class="item__price">€26</span></article>
         </div>
       </div>
     </div>

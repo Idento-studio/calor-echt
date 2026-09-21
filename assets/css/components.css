@@ -101,6 +101,8 @@
 }
 .item__desc { grid-column: 1 / -1; font-size: 13.5px; line-height: 1.7; color: var(--muted-400); margin: 0; max-width: 52ch; }
 .veg { display: inline-block; margin-left: 8px; vertical-align: middle; width: 15px; height: 15px; color: var(--sand-500); opacity: 0.9; }
+.spicy { display: inline-block; margin-left: 8px; vertical-align: middle; width: 15px; height: 15px; color: var(--rose-500); opacity: 0.9; }
+.menu-note { font-size: 12.5px; font-style: italic; color: var(--muted-400); margin: -10px 0 0; }
 
 @media (max-width: 1024px) {
   .menu { grid-template-columns: 1fr; }

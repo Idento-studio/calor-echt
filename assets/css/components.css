@@ -309,7 +309,9 @@ a.icon-link:hover { background: var(--gold-500); color: var(--rose-500); transfo
   flex-wrap: wrap;
 }
 @media (max-width: 560px) {
-  .cookie-banner { left: var(--sp-4); right: var(--sp-4); bottom: var(--sp-4); }
+  /* Rechts blijft bewust vrij: daar zit de floating RestoManager-knop
+     zodra iemand zijn cookiekeuze (opnieuw) via de footer-link opent. */
+  .cookie-banner { left: var(--sp-4); right: 84px; bottom: var(--sp-4); max-width: none; }
 }
 
 

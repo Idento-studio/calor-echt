@@ -137,6 +137,8 @@
 .ftr__bottom a { color: var(--muted-400); }
 .ftr__bottom a:hover { color: var(--gold-500); }
 .ftr__legal { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.ftr__legal button { all: unset; cursor: pointer; font: inherit; color: var(--muted-400); }
+.ftr__legal button:hover { color: var(--gold-500); }
 
 @media (max-width: 900px) {
   .ftr__grid { grid-template-columns: 1fr 1fr; }

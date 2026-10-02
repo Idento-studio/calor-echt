@@ -6,6 +6,12 @@
    Bewaart de keuze (met tijdstip) in localStorage en vraagt na 6 maanden
    opnieuw. Onderaan elke pagina staat een link met [data-cookie-settings]
    waarmee een bezoeker zijn keuze eerder al kan herzien.
+
+   Dispatcht ook 'lvg:consent-decided' zodra er een keuze is — accepteren
+   óf weigeren, en ook meteen bij een herhaald bezoek waar de keuze al
+   vaststaat. reservation-widget.js luistert daarop om de RestoManager-
+   knop pas te tonen als de banner van het scherm is: op mobiel vallen ze
+   anders over elkaar heen.
    ========================================================================== */
 (function () {
   'use strict';
@@ -73,14 +79,18 @@
       if (choice === 'accepted') {
         window.dispatchEvent(new Event('lvg:consent-accepted'));
       }
+      window.dispatchEvent(new Event('lvg:consent-decided'));
     });
   }
 
   function init() {
     if (!window.lvgConsent) {
       buildBanner();
-    } else if (window.lvgConsent === 'accepted') {
-      window.dispatchEvent(new Event('lvg:consent-accepted'));
+    } else {
+      if (window.lvgConsent === 'accepted') {
+        window.dispatchEvent(new Event('lvg:consent-accepted'));
+      }
+      window.dispatchEvent(new Event('lvg:consent-decided'));
     }
   }
 

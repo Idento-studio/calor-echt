@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<script>if (location.pathname !== "/") { location.replace("/"); }</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact | Calor Lunch &amp; Bar</title>
 <meta name="description" content="Adres, openingstijden en contactgegevens van Calor Lunch &amp; Bar in Echt, plus een contactformulier voor al je vragen.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://calor-echt.nl/contact/">
 <meta name="theme-color" content="#3D1414">
 
@@ -16,17 +16,20 @@
 <meta property="og:title" content="Contact | Calor Lunch &amp; Bar">
 <meta property="og:description" content="Adres, openingstijden en contactgegevens van Calor Lunch &amp; Bar in Echt, plus een contactformulier voor al je vragen.">
 <meta property="og:url" content="https://calor-echt.nl/contact/">
-<meta property="og:image" content="https://calor-echt.nl/assets/img/hero-interior.jpg">
+<meta property="og:image" content="https://calor-echt.nl/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
 
 <!-- Twitter/X -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contact | Calor Lunch &amp; Bar">
 <meta name="twitter:description" content="Adres, openingstijden en contactgegevens van Calor Lunch &amp; Bar in Echt, plus een contactformulier voor al je vragen.">
-<meta name="twitter:image" content="https://calor-echt.nl/assets/img/hero-interior.jpg">
+<meta name="twitter:image" content="https://calor-echt.nl/assets/img/og-image.jpg">
 
 <!-- Favicons -->
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../assets/img/cropped-Favicon-1.png" type="image/png">
-<link rel="apple-touch-icon" href="../assets/img/cropped-Favicon-1.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
 
 <!-- Fonts: preconnect + non-blocking load (print-media trick), met noscript-fallback -->
@@ -49,6 +52,16 @@
   "url":"https://calor-echt.nl/",
   "email":"info@calor-echt.nl",
   "address":{"@type":"PostalAddress","streetAddress":"Bovenstestraat 4","postalCode":"6101 EK","addressLocality":"Echt","addressCountry":"NL"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calor-echt.nl/"},
+    {"@type":"ListItem","position":2,"name":"Contact","item":"https://calor-echt.nl/contact/"}
+  ]
 }
 </script>
 </head>
@@ -85,7 +98,7 @@
   <div class="wrap visit">
     <div class="reveal">
       <p class="eyebrow eyebrow--sand">Contact</p>
-      <h2 class="stitle">Kom <em>langs</em></h2>
+      <h1 class="stitle">Kom <em>langs</em></h1>
       <p style="margin-top:22px;max-width:44ch">Reserveren is fijn, binnenwandelen mag altijd. We houden een hoekje vrij voor wie spontaan zin krijgt in een glas cava.</p>
 
       <div class="info">
@@ -96,10 +109,11 @@
         <div>
           <h3>Openingstijden</h3>
           <div class="hours">
-            <div><span>Di – Do</span><span>17:00 – 24:00</span></div>
-            <div><span>Vr – Za</span><span>17:00 – 01:00</span></div>
-            <div><span>Zo</span><span>15:00 – 22:00</span></div>
             <div><span>Ma</span><span>Gesloten</span></div>
+            <div><span>Di – Wo</span><span>11:00 – 18:00</span></div>
+            <div><span>Do</span><span>11:00 – 20:00</span></div>
+            <div><span>Vr – Za</span><span>11:00 – 00:00</span></div>
+            <div><span>Zo</span><span>11:00 – 20:00</span></div>
           </div>
         </div>
         <div>
@@ -209,7 +223,7 @@
         <div class="ftr__contact">
           <p>Bovenstestraat 4<br>6101 EK Echt</p>
           <p><a href="mailto:info@calor-echt.nl">info@calor-echt.nl</a></p>
-          <p>Di&ndash;Do 17:00&ndash;24:00<br>Vr&ndash;Za 17:00&ndash;01:00<br>Zo 15:00&ndash;22:00 &middot; Ma gesloten</p>
+          <p>Ma gesloten<br>Di&ndash;Wo 11:00&ndash;18:00<br>Do 11:00&ndash;20:00<br>Vr&ndash;Za 11:00&ndash;00:00<br>Zo 11:00&ndash;20:00</p>
         </div>
       </div>
     </div>
@@ -220,6 +234,7 @@
         <a href="../privacy/">Privacybeleid</a>
         <a href="../cookiebeleid/">Cookiebeleid</a>
         <a href="../voorwaarden/">Algemene voorwaarden</a>
+        <button type="button" data-cookie-settings>Cookie-instellingen</button>
       </nav>
     </div>
   </div>

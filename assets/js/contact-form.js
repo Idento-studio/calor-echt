@@ -1,7 +1,8 @@
 /* ==========================================================================
    contact-form.js — validatie en verzending van élk formulier met het
-   [data-ajax-form] attribuut op deze site (het reserveringsformulier op de
-   homepage én het contactformulier op /contact/ delen deze logica).
+   [data-ajax-form] attribuut op deze site. Momenteel enkel het
+   contactformulier op /contact/; reserveren verloopt via de RestoManager-
+   widget, niet via dit script.
 
    ┌─ WAAR FORMULIEREN NAARTOE GAAN ────────────────────────────────────────┐
    │ ENDPOINT staat op het Formspree-formulier van Calor. Het bericht      │
@@ -16,9 +17,7 @@
    └──────────────────────────────────────────────────────────────────────┘
 
    Zonder JavaScript blijft het contactformulier werken via de gewone HTML-
-   submit naar het mailto-action-attribuut. Het reserveringsformulier op de
-   homepage heeft geen action (het bestaat pas dankzij JS) — vandaar de
-   zichtbare <noscript>-melding daar met telefoon en e-mail.
+   submit naar het mailto-action-attribuut.
    ========================================================================== */
 (function () {
   'use strict';
@@ -52,15 +51,6 @@
     bericht: function (v, input) {
       if (!v) return input.hasAttribute('required') ? 'Schrijf hier je vraag of bericht.' : null;
       return null;
-    },
-    datum: function (v) {
-      if (!v) return 'Kies een gewenste datum.';
-      return null;
-    },
-    personen: function (v) {
-      if (!v) return 'Vul aan met hoeveel personen jullie komen.';
-      if (parseInt(v, 10) < 1) return 'Minstens 1 persoon, uiteraard.';
-      return null;
     }
   };
 
@@ -69,6 +59,7 @@
   function initForm(form) {
     var statusEl = form.querySelector('.form-status');
     var submitBtn = form.querySelector('button[type="submit"]');
+    var renderedAt = Date.now();
     form.setAttribute('novalidate', 'novalidate');
 
     function fieldWrap(input) { return input.closest ? input.closest('.field') : null; }
@@ -130,10 +121,9 @@
 
     // Verzamelt elk benoemd, niet-verborgen veld dat effectief in dit
     // formulier bestaat (dus nooit het honeypot-veld "website").
-    var FIELD_ORDER = ['naam', 'email', 'telefoon', 'datum', 'personen', 'bericht'];
+    var FIELD_ORDER = ['naam', 'email', 'telefoon', 'bericht'];
     var FIELD_LABELS = {
-      naam: 'Naam', email: 'E-mail', telefoon: 'Telefoon',
-      datum: 'Gewenste datum', personen: 'Aantal personen', bericht: 'Bericht'
+      naam: 'Naam', email: 'E-mail', telefoon: 'Telefoon', bericht: 'Bericht'
     };
     function values() {
       var v = {};
@@ -207,6 +197,10 @@
 
       // Honeypot: alleen bots vullen dit onzichtbare veld in.
       if (form.elements.website && form.elements.website.value) return;
+
+      // Tijdsdrempel: een bot vult en verstuurt een formulier vrijwel
+      // ogenblikkelijk na het laden van de pagina, een mens niet.
+      if (Date.now() - renderedAt < 3000) return;
 
       var firstBad = null;
       Object.keys(RULES).forEach(function (name) {

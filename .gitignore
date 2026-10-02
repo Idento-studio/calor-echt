@@ -10,6 +10,15 @@
 # je drive), want doordat git het niet volgt, is er ook geen back-up van.
 PROJECT-BRIEF.md
 
+# Idento's eigen procesdocumenten voor het opzetten van een klantsite vanuit
+# de starter-template. Horen niet in een klantrepo: die staat publiek op
+# GitHub en wordt door Vercel 1-op-1 als site gedeployed (geen build-stap
+# die ze eruit filtert), dus ze zouden gewoon live staan op het domein van
+# de klant. Blijven wel lokaal staan, net als PROJECT-BRIEF.md hierboven.
+project-intake.md
+project-kickoff-prompt.md
+LAUNCH.md
+
 # Windows- en macOS-rommel die per ongeluk mee zou reizen
 Thumbs.db
 desktop.ini

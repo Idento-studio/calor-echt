@@ -3,8 +3,9 @@
    Laadt op elke pagina, vóór analytics.js. Zolang niemand kiest, laadt er
    niets van Google — pas na een klik op "Accepteren" gaat analytics.js aan.
 
-   Bewaart de keuze in localStorage. Onderaan elke pagina staat een link met
-   [data-cookie-settings] waarmee een bezoeker zijn keuze kan herzien.
+   Bewaart de keuze (met tijdstip) in localStorage en vraagt na 6 maanden
+   opnieuw. Onderaan elke pagina staat een link met [data-cookie-settings]
+   waarmee een bezoeker zijn keuze eerder al kan herzien.
    ========================================================================== */
 (function () {
   'use strict';
@@ -16,13 +17,24 @@
   var PRIVACY_URL = (thisScript && thisScript.getAttribute('data-privacy-url')) || 'privacy/';
 
   var KEY = 'lvg-cookie-consent';
+  var MAX_AGE_MS = 1000 * 60 * 60 * 24 * 183; // ~6 maanden
   var banner = null;
 
   function getConsent() {
-    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      if (!parsed || !parsed.value || !parsed.ts) return null;
+      if (Date.now() - parsed.ts > MAX_AGE_MS) {
+        localStorage.removeItem(KEY);
+        return null;
+      }
+      return parsed.value;
+    } catch (e) { return null; }
   }
   function setConsent(value) {
-    try { localStorage.setItem(KEY, value); } catch (e) { /* privénavigatie o.i.d. — negeren */ }
+    try { localStorage.setItem(KEY, JSON.stringify({ value: value, ts: Date.now() })); } catch (e) { /* privénavigatie o.i.d. — negeren */ }
     window.lvgConsent = value;
   }
 

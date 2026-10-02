@@ -1,25 +1,19 @@
 <!--
   ══════════════════════════════════════════════════════════════════════════
   404 — pagina niet gevonden
-  GitHub Pages serveert dit bestand automatisch voor élke URL die niet
-  bestaat. Het moet in de ROOT van de repo blijven staan, naast index.html.
+  Vercel serveert dit bestand automatisch voor élke URL die niet bestaat.
+  Het moet in de ROOT van de repo blijven staan, naast index.html.
 
-  WAAROM STAAT DE CSS HIER INLINE IN PLAATS VAN IN brand.css?
-  Omdat deze pagina op een willekeurige URL geserveerd wordt. Vraagt iemand
-  /diensten/oud/tarieven op, dan zou een relatief pad als
-  assets/css/brand.css oplossen naar /diensten/oud/assets/css/brand.css —
-  en dat bestaat niet. Je krijgt dan een kale, ongestyleerde 404. Een
-  root-relatief pad (/assets/...) lost dat op een eigen domein wel op, maar
-  breekt zolang de site op een GitHub Pages-projectpad staat
-  (gebruiker.github.io/repo/). Daarom is deze pagina volledig
-  zelfstandig: geen externe CSS, geen externe JS, geen afbeeldingen.
+  WAAROM STAAT DE CSS HIER INLINE IN PLAATS VAN IN assets/css/?
+  Deze pagina wordt getoond voor een willekeurige, onbestaande URL. Een
+  externe stylesheet kan in theorie altijd om een andere reden niet laden
+  (typo in een toekomstige herstructurering, CDN-hik, ...) — dan krijg je
+  een kale, ongestyleerde 404. Door hier zelfstandig te blijven (geen
+  externe CSS/JS/afbeeldingen, enkel de Google Fonts-link met een absolute
+  URL) werkt deze pagina gegarandeerd, ongeacht wat er elders verandert.
 
-  LET OP: de kleuren hieronder zijn een KOPIE van de tokens in
-  assets/css/brand.css. Pas je daar het palet aan, pas het dan ook hier aan.
-  Dat is de prijs voor een 404 die op elke URL blijft werken.
-
-  Alles tussen vierkante haken vul je per klant in; de antwoorden komen uit
-  de ingevulde PROJECT-BRIEF.md (blanco fiche: project-intake.md).
+  LET OP: de kleurtokens hieronder zijn een kopie van de huisstijl in
+  assets/css/brand.css. Wijzig je daar het palet, wijzig het dan ook hier.
   ══════════════════════════════════════════════════════════════════════════
 -->
 <!DOCTYPE html>
@@ -27,60 +21,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Pagina niet gevonden — Calor</title>
+  <title>Pagina niet gevonden — Calor Lunch &amp; Bar</title>
   <!-- Een 404 hoort niet in Google te staan, en niet in sitemap.xml. -->
-  <meta name="theme-color" content="#33422e">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#3D1414">
 
   <!-- Fonts mogen hier wel extern: de URL is absoluut, dus die werkt op elke
        diepte. Wijzig je de fonts in brand.css, wijzig ze dan ook hier. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    /* Kopie van de tokens uit brand.css — zie de uitleg bovenaan. */
+    /* Kopie van de tokens uit assets/css/brand.css — zie de uitleg bovenaan. */
     :root {
-      color-scheme: light;
-      --moss-900: #242f1f;
-      --moss-800: #33422e;
-      --gold-600: #a8721f;
-      --gold-500: #c98a34;
-      --gold-400: #dba456;
-      --linen-50: #faf8f2;
-      --linen-100: #f3efe3;
-      --linen-300: #ded4bd;
-      --sage-300: #c2c7b3;
-      --ink-900: #1a1712;
-      --ink-600: #4a453c;
-      --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-      --font-body: "Work Sans", "Segoe UI", system-ui, sans-serif;
-      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      color-scheme: dark;
+      --wine-900: #2A0E0E;
+      --wine-800: #3D1414;
+      --gold-500: #F1D68A;
+      --sand-500: #EBCFA0;
+      --rose-500: #FF3D78;
+      --cream-050: #FDF5E6;
+      --muted-400: #B8A89A;
+      --font-display: "Playfair Display", Georgia, serif;
+      --font-body: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --ease: cubic-bezier(0.22, 0.8, 0.28, 1);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
+    html { overflow-x: hidden; }
     body {
       margin: 0;
-      min-height: 100vh;
+      min-height: 100svh;
       display: grid;
       place-items: center;
       padding: 2rem 1.5rem;
-      background: var(--moss-900);
-      color: var(--linen-50);
+      background: var(--wine-800);
+      color: var(--sand-500);
       font-family: var(--font-body);
       font-size: 1.0625rem;
-      line-height: 1.6;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
       -webkit-font-smoothing: antialiased;
       position: relative;
       overflow-x: hidden;
     }
-    /* Zelfde sfeerverloop als de page-header op de andere pagina's. */
+    /* Zelfde sfeerverloop als de hero op de andere pagina's. */
     body::after {
       content: "";
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(60% 90% at 12% 0%, rgba(201, 138, 52, 0.28), transparent 65%),
-        radial-gradient(50% 80% at 95% 100%, rgba(68, 86, 66, 0.55), transparent 70%);
+        radial-gradient(120% 78% at 50% 0%, rgba(61, 20, 20, 0.5) 0%, rgba(42, 14, 14, 0.88) 62%, rgba(30, 9, 9, 0.97) 100%);
       pointer-events: none;
     }
 
@@ -88,110 +80,102 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 44rem;
+      max-width: 40rem;
       text-align: center;
     }
 
-    .code {
+    .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
-      font-size: 0.8125rem;
+      gap: 0.6rem;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.5em;
       text-transform: uppercase;
-      color: var(--gold-400);
-    }
-    .code::before {
-      content: "";
-      width: 22px;
-      height: 2px;
-      background: var(--gold-400);
+      color: var(--sand-500);
+      opacity: 0.9;
     }
 
     h1 {
-      margin: 0.75rem 0 0;
+      margin: 1.1rem 0 0;
       font-family: var(--font-display);
+      font-style: italic;
       font-weight: 600;
-      font-size: clamp(2rem, 1.5rem + 2.2vw, 3rem);
-      line-height: 1.08;
-      color: var(--linen-50);
+      font-size: clamp(1.9rem, 1.3rem + 2.4vw, 2.8rem);
+      line-height: 1.15;
+      color: var(--cream-050);
       text-wrap: balance;
     }
     p {
-      margin: 1rem auto 0;
-      max-width: 46ch;
-      color: var(--sage-300);
-      font-size: 1.125rem;
-      line-height: 1.55;
+      margin: 1.1rem auto 0;
+      max-width: 42ch;
+      color: var(--sand-500);
+      opacity: 0.92;
+      font-size: 1rem;
+      line-height: 1.7;
     }
 
     .actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem;
-      margin-top: 2rem;
+      gap: 14px 34px;
+      margin-top: 2.25rem;
     }
     .btn {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.6rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
+      gap: 16px;
       font-family: var(--font-body);
-      font-size: 0.9375rem;
+      font-size: 11px;
       font-weight: 600;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--gold-500);
       text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.3s var(--ease), background 0.3s ease, border-color 0.3s ease;
+      transition: color 0.3s var(--ease);
     }
-    .btn-primary {
-      background: var(--gold-500);
-      color: var(--ink-900);
+    .btn::after {
+      content: "";
+      display: block;
+      width: 44px;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.35s var(--ease);
     }
-    .btn-primary:hover { transform: translateY(-3px); background: var(--gold-400); }
-    .btn-ghost {
-      border-color: rgba(250, 248, 242, 0.45);
-      color: var(--linen-50);
-    }
-    .btn-ghost:hover { transform: translateY(-3px); background: rgba(250, 248, 242, 0.1); }
-    .btn:focus-visible {
-      outline: 3px solid var(--gold-400);
-      outline-offset: 3px;
-    }
+    .btn:hover { color: var(--cream-050); }
+    .btn:hover::after { width: 70px; }
+    .btn:focus-visible { outline: 2px solid var(--gold-500); outline-offset: 4px; }
 
     .help {
-      margin-top: 2.5rem;
+      margin-top: 2.75rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(250, 248, 242, 0.15);
-      font-size: 0.9375rem;
-      color: var(--sage-300);
+      border-top: 1px solid rgba(235, 207, 160, 0.18);
+      font-size: 13px;
+      letter-spacing: 0.02em;
+      color: var(--muted-400);
     }
-    .help a { color: var(--gold-400); text-decoration: none; font-weight: 500; }
-    .help a:hover { text-decoration: underline; }
+    .help a { color: var(--gold-500); text-decoration: none; border-bottom: 1px solid rgba(241, 214, 138, 0.4); padding-bottom: 1px; }
+    .help a:hover { color: var(--cream-050); border-color: var(--cream-050); }
 
     @media (prefers-reduced-motion: reduce) {
-      .btn { transition: none; }
+      .btn, .btn::after, .help a { transition: none; }
     }
   </style>
 </head>
 <body>
   <main>
-    <span class="code">Fout 404</span>
+    <p class="eyebrow">Fout 404</p>
     <h1>Deze pagina bestaat niet (meer).</h1>
     <p>Misschien is de link verouderd, of zit er een tikfout in het adres. Geen zorgen — hieronder vind je snel je weg terug.</p>
 
-    <!-- De links hieronder zijn absoluut, want een relatief pad werkt niet
-         op een 404: de browser weet niet hoe diep de gevraagde URL zat.
-         Zodra calor-echt.nl ingevuld is, kloppen ze. Test je nog op een GitHub
-         Pages-projectpad (gebruiker.github.io/repo/), zet dan tijdelijk die
-         volledige URL hier. -->
+    <!-- De links hieronder zijn bewust absoluut: een 404 kan voor om het
+         even welke URL-diepte getoond worden, dus een relatief pad zou
+         hier niet betrouwbaar naar de juiste plek verwijzen. -->
     <div class="actions">
-      <a class="btn btn-primary" href="https://calor-echt.nl/">Naar de homepage</a>
-      <a class="btn btn-ghost" href="https://calor-echt.nl/contact/">Contacteer ons</a>
+      <a class="btn" href="https://calor-echt.nl/">Naar de homepage</a>
+      <a class="btn" href="https://calor-echt.nl/la-carta/">Bekijk onze kaart</a>
+      <a class="btn" href="https://calor-echt.nl/reserveren/">Reserveer een tafel</a>
     </div>
 
     <p class="help">

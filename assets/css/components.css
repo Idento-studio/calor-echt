@@ -273,11 +273,10 @@
 .cookie-banner {
   position: fixed;
   left: var(--sp-5);
-  right: var(--sp-5);
+  right: auto;
   bottom: var(--sp-5);
   z-index: 90;
   max-width: 480px;
-  margin-inline: auto;
   background: var(--inverse-bg-strong);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);

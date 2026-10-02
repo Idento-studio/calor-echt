@@ -155,8 +155,18 @@
 }
 .info p, .info a { color: var(--sand-500); font-size: 14.5px; line-height: 1.9; }
 .info a:hover { color: var(--gold-500); }
+.icon-links { display: flex; gap: 12px; margin-top: 14px; }
+.icon-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 1px solid var(--border); color: var(--gold-500);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.icon-link svg { width: 18px; height: 18px; }
+.icon-link:hover { background: var(--gold-500); color: var(--wine-900); transform: translateY(-2px); }
 .hours { display: grid; gap: 2px; }
 .hours div { display: flex; justify-content: space-between; max-width: 290px; gap: 20px; color: var(--sand-500); font-size: 14.5px; }
+.hours-note { margin-top: 8px; font-size: 12px; color: var(--muted-400); max-width: 290px; }
 .hours span:first-child { color: var(--muted-400); }
 .map { border: 1px solid var(--sand-dim); overflow: hidden; min-height: 360px; }
 .map iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; filter: grayscale(0.35) contrast(1.05); }

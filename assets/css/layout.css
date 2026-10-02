@@ -109,7 +109,7 @@
    de viewport en zou anders over de juridische links in .ftr__bottom
    kunnen vallen wanneer de footer in beeld scrolt. */
 .ftr { background: var(--wine-900); padding-block: clamp(56px, 8vw, 96px) 140px; border-top: 1px solid var(--sand-dim); }
-.ftr__grid { display: grid; grid-template-columns: 1.2fr 1fr 1.2fr; gap: clamp(32px, 5vw, 64px); }
+.ftr__grid { display: grid; grid-template-columns: 1.3fr 0.8fr 1fr 1fr; gap: clamp(28px, 4vw, 56px); }
 .ftr__brand img { width: 130px; }
 .ftr__tagline { margin-top: 16px; max-width: 32ch; color: var(--sand-500); font-size: 13.5px; line-height: 1.7; }
 .ftr__social { margin-top: 18px; }
@@ -140,9 +140,14 @@
 .ftr__legal button { all: unset; cursor: pointer; font: inherit; color: var(--muted-400); }
 .ftr__legal button:hover { color: var(--gold-500); }
 
+@media (max-width: 1080px) {
+  .ftr__grid { grid-template-columns: 1.3fr 0.8fr 1fr; }
+  .ftr__col--hours { grid-column: 1 / -1; }
+}
 @media (max-width: 900px) {
   .ftr__grid { grid-template-columns: 1fr 1fr; }
   .ftr__brand { grid-column: 1 / -1; }
+  .ftr__col--hours { grid-column: 1 / -1; }
 }
 @media (max-width: 680px) {
   .ftr__grid { grid-template-columns: 1fr; gap: 32px; }

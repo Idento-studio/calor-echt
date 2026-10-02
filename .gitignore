@@ -23,3 +23,7 @@ LAUNCH.md
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Editor-eigen instellingen (bv. Live Server-poort) — persoonlijk, hoort
+# niet in een gedeelde klantrepo.
+.vscode/

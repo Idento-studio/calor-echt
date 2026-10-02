@@ -15,7 +15,7 @@
 (function () {
   'use strict';
 
-  var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  var GA_MEASUREMENT_ID = 'G-23W6TEP95F';
 
   function isConfigured() {
     return GA_MEASUREMENT_ID && GA_MEASUREMENT_ID.indexOf('XXXX') === -1;
